@@ -40,12 +40,16 @@ os.system('touch test_log')
 if args.test[0] == 'all':
     custom_list = test_list
 else:
-    custom_list = [test_name for test_name in test_list
-                   if re.search(args.test[0], test_name)]
+    custom_list = [
+        test_name for test_name in test_list
+        if re.search(
+            args.test[0], re.sub('^' + test_dir + os.sep, '', test_name)
+        )
+    ]
 
 for test_name in custom_list:
     clean_folder(log_files)
-    print(re.sub('^' + current_dir + os.sep, '', test_name), end='\t')
+    print(re.sub('^' + test_dir + os.sep, '', test_name), end='\t')
     os.system('echo {} >> test_log'.format(test_name))
     os.system(test_prefix + test_name + ' >> test_log')
     with open('test_log', 'r') as test_log:
