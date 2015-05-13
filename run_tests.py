@@ -3,6 +3,8 @@ import os
 import os.path
 import argparse
 
+from settings import BUILD_PATH
+
 test_list = [
     "",
     "perf/size/1.json",
@@ -41,11 +43,10 @@ test_list = [
     "optional/time/34.json"
 ]
 
-test_prefix = ("python ../build/check_test.py --prefix"
-               " ../build/ --test ../build/tests/")
+test_prefix = ("python check_test.py --prefix {}/ --test tests/".format(BUILD_PATH))
 
 current_dir = os.getcwd()
-to_keep = 'run_tests.py', 'check_test.py'
+to_keep = 'run_tests.py', 'check_test.py', 'settings.template', 'settings.py', '.gitignore'
 log_files = 'clean_test_log', 'test_log'
 
 def clean_folder(extra_files=()):
