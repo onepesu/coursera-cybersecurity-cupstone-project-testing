@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+from __future__ import print_function
+
 import re
 import os
 import os.path
@@ -34,16 +36,14 @@ clean_folder()
 os.system('touch test_log')
 
 if args.test[0] == 'all':
-    for test_name in test_list:
-        clean_folder(log_files)
-        os.system('echo {} >> test_log'.format(test_name))
-        os.system(test_prefix + test_name + ' >> test_log')
+    custom_list = test_list
 else:
-    for arg in args.test:
-        test_name = test_list[int(arg)]
-        clean_folder(log_files)
-        os.system('echo {} >> test_log'.format(test_name))
-        os.system(test_prefix + test_name + ' >> test_log')
+    custom_list = [test_name for test_name in test_list if re.search(args.test[0], test_name)]
+
+for test_name in custom_list:
+    clean_folder(log_files)
+    os.system('echo {} >> test_log'.format(test_name))
+    os.system(test_prefix + test_name + ' >> test_log')
 
 with open('test_log', 'r') as source:
     with open('clean_test_log', 'w') as target:
@@ -52,4 +52,3 @@ with open('test_log', 'r') as source:
                 target.write(line)
 
 clean_folder(log_files)
-
