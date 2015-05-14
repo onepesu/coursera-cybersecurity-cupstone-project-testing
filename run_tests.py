@@ -19,7 +19,7 @@ test_list = [os.path.join(path, filename) for path, _, files
 test_prefix = ("python check_test.py --prefix {}/ --test ".format(BUILD_PATH))
 
 to_keep = ('run_tests.py', 'check_test.py', 'settings.template',
-           'settings.py', '.gitignore')
+           'settings.py', '.gitignore', 'io_to_json.py')
 log_files = 'clean_test_log', 'test_log'
 
 
