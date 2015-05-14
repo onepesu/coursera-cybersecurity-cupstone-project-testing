@@ -5,7 +5,7 @@ start = '    '
 
 def translate(input_, output):
     print('{')
-    print(start + '"tests": [')
+    print(start + '"tests": [', end='')
     for n, io in enumerate(zip(input_, output)):
         input_string, output_dict = io
         if n != 0:
@@ -20,7 +20,7 @@ def translate(input_, output):
                   end='"')
         if output_dict.get('exit'):
             print(',')
-            print(3*start + '"exit": "' + str(output_dict['exit']), end='"')
+            print(3*start + '"exit": ' + str(output_dict['exit']), end='')
         print('')
         print(2*start + '}', end='')
 
