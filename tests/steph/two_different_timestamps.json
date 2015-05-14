@@ -1,0 +1,9 @@
+{
+    "tests": [
+        {
+            "input": "logappend -T 5 -T 6 -K secret -L -E Fred -R 1 log1",
+            "output": "invalid\n",
+            "exit": 255
+        }
+    ]
+}

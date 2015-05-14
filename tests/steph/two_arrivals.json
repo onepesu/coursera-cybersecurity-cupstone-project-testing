@@ -1,0 +1,7 @@
+{
+    "tests": [
+        {
+            "input": "logappend -T 1 -K secret -A -A -E Fred log1"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "tests": [
+        {
+            "input": "logappend -T 1 -K token -A -E Gauss log1"
+        },
+        {
+            "input": "logappend -T 2 -K token -A -E Euler log2"
+        }
+    ]
+}
