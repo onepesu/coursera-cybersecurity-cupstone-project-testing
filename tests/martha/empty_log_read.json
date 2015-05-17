@@ -1,0 +1,18 @@
+{
+    "tests": [
+        {
+            "input": "logread -K token -S log1",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -K token -R -G martha log1"
+        },
+        {
+            "input": "logread -K token -T -G martha log1",
+            "output": "0\n"
+        },
+        {
+            "input": "logread -K token -I -G martha log1"
+        }
+    ]
+}
