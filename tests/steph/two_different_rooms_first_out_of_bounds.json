@@ -1,0 +1,15 @@
+{
+    "tests": [
+        {
+            "input": "logappend -T 1 -K token -A -E Gauss log1"
+        },
+        {
+            "input": "logappend -T 2 -K token -A -E Gauss -R 4294967297 -R 1 log1",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logread -K token -R -E Gauss log1"
+        }
+    ]
+}
