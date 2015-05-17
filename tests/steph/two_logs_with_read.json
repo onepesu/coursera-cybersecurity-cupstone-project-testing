@@ -1,0 +1,18 @@
+{
+    "tests": [
+        {
+            "input": "logappend -T 1 -K token -A -E Gauss log1"
+        },
+        {
+            "input": "logappend -T 1 -K token1 -A -G Gauss log2"
+        },
+        {
+            "input": "logread -K token -S log1",
+            "output": "Gauss\n\n"
+        },
+        {
+            "input": "logread -K token1 -S log2",
+            "output": "\nGauss\n"
+        }
+    ]
+}
