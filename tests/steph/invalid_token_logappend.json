@@ -1,0 +1,12 @@
+{
+    "tests": [
+        {
+            "input": "logappend -T 1 -K token -A -E Gauss log1"
+        },
+        {
+            "input": "logappend -T 1 -K secret -A -E Manfred log1",
+            "output": "invalid\n",
+            "exit": 255
+        }
+    ]
+}
