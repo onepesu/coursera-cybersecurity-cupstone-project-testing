@@ -1,0 +1,44 @@
+{
+    "tests": [
+        {
+            "input": "logappend -T 1 -K secret -A -E Fred log1"
+        },
+        {
+            "input": "logappend -T 2 -K secret -A -G Fredita log1"
+        },
+        {
+            "input": "logappend -T 3 -K secret -A -E Fred -R 1 log1"
+        },
+        {
+            "input": "logappend -T 4 -K secret -A -G Fredita -R 1 log1"
+        },
+        {
+            "input": "logappend -T 5 -K secret -L -E Fred -R 1 log1"
+        },
+        {
+            "input": "logappend -T 6 -K secret -L -G Fredita -R 1 log1"
+        },
+        {
+            "input": "logappend -T 7 -K secret -A -E Fred -R 2 log1"
+        },
+        {
+            "input": "logappend -T 8 -K secret -A -G Fredita -R 2 log1"
+        },
+        {
+            "input": "logappend -T 9 -K secret -L -E Fred -R 2 log1"
+        },
+        {
+            "input": "logappend -T 10 -K secret -L -G Fredita -R 2 log1"
+        },
+        {
+            "input": "logappend -T 11 -K secret -A -E Fred -R 1 log1"
+        },
+        {
+            "input": "logappend -T 12 -K secret -A -G Fredita -R 1 log1"
+        },
+        {
+            "input": "logread -K secret -I -E Fred -G Fredita log1",
+            "output": "1,2"
+        }
+    ]
+}
