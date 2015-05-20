@@ -31,13 +31,13 @@ def clean_folder(extra_files=()):
             os.system('rm {}'.format(f))
 
 parser = argparse.ArgumentParser()
-parser.add_argument('test', nargs='+')
+parser.add_argument('test', nargs='*')
 args = parser.parse_args()
 
 clean_folder()
 os.system('touch test_log')
 
-if args.test[0] == 'all':
+if not args.test:
     custom_list = test_list
 else:
     custom_list = [
