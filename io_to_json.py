@@ -1,6 +1,7 @@
 from __future__ import print_function
 
 import sys
+import settings
 
 start = '    '
 
@@ -36,5 +37,5 @@ def translate(input_, output, filename=None):
     if filename is None:
         _translate(input_, output)
     else:
-        with open(filename, 'w') as open_file:
+        with open(settings.TEST_FOLDER + filename, 'w') as open_file:
             _translate(input_, output, open_file)
