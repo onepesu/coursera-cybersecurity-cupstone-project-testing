@@ -1,0 +1,73 @@
+{
+    "tests": [
+        {
+            "input": "logappend -T 0 -K secret -A -E Fred log1",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T -K secret -A -E Fred log2",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T -K secret -A -E Fred log3 4",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T -0 -K secret -A -E Fred log4",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 7 -K secret -A -E Fred log5"
+        },
+        {
+            "input": "logappend -T 7 -K secret -A -E Fred log5",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T -1 -K secret -A -E Fred log6",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -K secret -A -E Fred log7",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 1073741823 -K secret -A -E Fred log8"
+        },
+        {
+            "input": "logappend -T 1073741824 -K secret -A -E Fred log9",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T -1073741824 -K secret -A -E Fred log10",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T -K 4 secret -A -E Fred log11",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T -K secret 4 -A -E Fred log12",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T -K secret -A 4 -E Fred log13",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 1 2 -K secret -A -E Fred "
+        }
+    ]
+}

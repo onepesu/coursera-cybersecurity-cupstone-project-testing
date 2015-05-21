@@ -1,0 +1,232 @@
+{
+    "tests": [
+        {
+            "input": "logappend -T 1 -K key -E Jim -A -A log"
+        },
+        {
+            "input": "logappend -T 1 -K key -E Jim -A -A -A -A -A -A -A -A -A -A log1"
+        },
+        {
+            "input": "logappend -T 1 -K key -E Jim -L -L log",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 1 -K key -E Jim -L -L -L -L -L -L -L -L -L -L -L -L -L -L -L log1",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 1 -K key -E Nick -E Jim -A log2"
+        },
+        {
+            "input": "logappend -T 1 -K key -G Nick -E Jim -A log3",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 1 -K key -E Nick -G Jim -A log4",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 1 -K key -G Nick -G Jim -A log5"
+        },
+        {
+            "input": "logread -S -K key log1",
+            "output": "Jim\n\n"
+        },
+        {
+            "input": "logread -S -K key log2",
+            "output": "Jim\n\n"
+        },
+        {
+            "input": "logread -S -K key log3",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -S -K key log4",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -S -K key log5",
+            "output": "\nJim\n"
+        },
+        {
+            "input": "logappend -T 1 -K key -E -E Jim -A log6",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 1 -K key -G -E Jim -A log7",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 1 -K key -E -G Jim -A log8",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 1 -K key -G -G Jim -A log9",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logread -S -K key log6",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -S -K key log7",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -S -K key log8",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -S -K key log9",
+            "output": "\n\n"
+        },
+        {
+            "input": "logappend -T 1 -K key -E Nick -E -A log10",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 1 -K key -G Nick -E -A log11",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 1 -K key -E Nick -G -A log12",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 1 -K key -G Nick -G -A log13",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logread -S -K key log10",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -S -K key log11",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -S -K key log12",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -S -K key log13",
+            "output": "\n\n"
+        },
+        {
+            "input": "logappend log14 -T 1 -T 1 -K key -G Nick -A"
+        },
+        {
+            "input": "logappend -T 1 -T -K key -G Nick -A log15",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T -T 1 -K key -G Nick -A log16",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 1 -T 2 -K key -G Nick -A log17"
+        },
+        {
+            "input": "logappend -T 2 -K key -G Vera -A log17",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logappend -T 2 -T 1 -K key -G Nick -A log18"
+        },
+        {
+            "input": "logappend -T 2 -K key -G Vera -A log18"
+        },
+        {
+            "input": "logread -S -K key log17",
+            "output": "\nNick\n"
+        },
+        {
+            "input": "logread -S -K key log18",
+            "output": "\nNick,Vera\n"
+        },
+        {
+            "input": "logappend -T 1 -T 1 -K key -G Nick -A log19"
+        },
+        {
+            "input": "logread -S -K key log19",
+            "output": "\nNick\n"
+        },
+        {
+            "input": "logappend -T 1 -K key -G Nick -A loga20 loga21 loga22",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logread -S -K key loga20",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -S -K key loga21",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -S -K key loga22",
+            "output": "\n\n"
+        },
+        {
+            "input": "logappend loga25 -T 1 -K key loga23 loga23 -G Nick -A loga24 loga26",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logread -S -K key loga23",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -S -K key loga24",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -S -K key loga25",
+            "output": "\n\n"
+        },
+        {
+            "input": "logread -S -K key loga26",
+            "output": "\n\n"
+        },
+        {
+            "input": "logappend -T 1 -K key -G Nick -A log27 -K key1"
+        },
+        {
+            "input": "logappend log28 -K key -T 1 -K key1 -G Nick -A"
+        },
+        {
+            "input": "logread -S -K key log27",
+            "output": "integrity violation\n",
+            "exit": 255
+        },
+        {
+            "input": "logread -S -K key1 log27",
+            "output": "\nNick\n"
+        },
+        {
+            "input": "logread -S -K key log28",
+            "output": "integrity violation\n",
+            "exit": 255
+        },
+        {
+            "input": "logread -S -K key1 log28",
+            "output": "\nNick\n"
+        }
+    ]
+}
