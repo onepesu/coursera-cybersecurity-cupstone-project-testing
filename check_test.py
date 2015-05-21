@@ -59,7 +59,7 @@ def main(testin, prefix):
             print("got:\n{}expected:\n{}".format(err, expectederr), end='')
             passed = False
         if ret != expectedret:
-            print("got:\n{}expected:\n{}".format(ret, expectedret), end='')
+            print("got:\n{}\nexpected:\n{}\n".format(ret, expectedret), end='')
             passed = False
     if passed is True:
         print("Test passed")
