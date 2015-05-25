@@ -1,2 +1,3 @@
-BUILD_PATH = 'path/to/build'
+BUILD_PATH = 'path/to/build/'
+ALTERNATIVE_BUILD_PATH = 'alternative/path/to/build/'
 TEST_FOLDER = 'path/to/tests/'

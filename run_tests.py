@@ -6,7 +6,7 @@ import os
 import os.path
 import argparse
 
-from settings import BUILD_PATH
+import settings
 
 OK = '\033[92m[OK]\033[0m'
 FAIL = '\033[91m[FAIL]\033[0m'
@@ -18,8 +18,6 @@ test_list = [
     os.path.join(path, filename) for path, _, files in os.walk(test_dir)
     for filename in files if re.search(json_re, filename)
 ]
-
-test_prefix = 'python check_test.py --prefix {}/ --test '.format(BUILD_PATH)
 
 to_keep = ('run_tests.py', 'check_test.py', 'settings.template',
            'settings.py', '.gitignore', 'io_to_json.py')
@@ -35,21 +33,29 @@ def clean_folder(extra_files=()):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('test', nargs='*')
+parser.add_argument('--team', nargs='?')
 args = parser.parse_args()
 
 clean_folder()
 os.system('touch test_log')
 os.system('touch clean_test_log')
 
-if not args.test:
-    custom_list = test_list
-else:
+if args.test:
     custom_list = [
         test_name for test_name in test_list
         if re.search(
             args.test[0], re.sub('^' + test_dir + os.sep, '', test_name)
         )
     ]
+else:
+    custom_list = test_list
+
+if args.team:
+    path_to_build = settings.ALTERNATIVE_BUILD_PATH.format(args.team)
+else:
+    path_to_build = settings.BUILD_PATH
+
+test_prefix = 'python check_test.py --prefix {} --test '.format(path_to_build)
 
 n = max([len(test_name) for test_name in custom_list])
 
