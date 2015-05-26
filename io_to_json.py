@@ -4,39 +4,38 @@ import sys
 import os.path
 import settings
 
-start = '    '
 
+def _translate(input_, output, open_file):
+    def put(string, indentation=0, end='\n'):
+        print('    '*indentation + string, end=end, file=open_file)
 
-def _translate(input_, output, open_file=sys.stdout):
-    print('{', file=open_file)
-    print(start + '"tests": [', end='', file=open_file)
+    put('{')
+    put('"tests": [', 1, '')
     for n, io in enumerate(zip(input_, output)):
         input_string, output_dict = io
         if n != 0:
-            print(',', file=open_file)
+            put(',')
         else:
-            print('', file=open_file)
-        print(2*start + '{', file=open_file)
-        print(3*start + '"input": "' + input_string, end='"', file=open_file)
+            put('')
+        put('{', 2)
+        put('"input": "' + input_string, 3, '"')
         if output_dict.get('output'):
-            print(',', file=open_file)
-            print(3*start + '"output": "' + repr(output_dict['output'])[1:-1],
-                  end='"', file=open_file)
+            put(',')
+            put('"output": "' + repr(output_dict['output'])[1:-1], 3, '"')
         if output_dict.get('exit'):
-            print(',', file=open_file)
-            print(3*start + '"exit": ' + str(output_dict['exit']), end='',
-                  file=open_file)
-        print('', file=open_file)
-        print(2*start + '}', end='', file=open_file)
+            put(',')
+            put('"exit": ' + str(output_dict['exit']), 3, '')
+        put('')
+        put('}', 2, '')
 
-    print('', file=open_file)
-    print(start + ']', file=open_file)
-    print('}', file=open_file)
+    put('')
+    put(']', 1)
+    put('}')
 
 
-def translate(input_, output, filename=None):
-    if filename is None:
-        _translate(input_, output)
+def translate(input_, output, filename=sys.stdout):
+    if isinstance(filename, file):
+        _translate(input_, output, filename)
     else:
         with open(os.path.join(settings.TEST_FOLDER, filename), 'w') as open_file:
             _translate(input_, output, open_file)
