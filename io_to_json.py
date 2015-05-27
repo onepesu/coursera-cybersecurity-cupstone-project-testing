@@ -22,6 +22,9 @@ def _translate(input_, output, open_file):
         if output_dict.get('output'):
             put(',')
             put('"output": "' + repr(output_dict['output'])[1:-1], 3, '"')
+        if output_dict.get('error'):
+            put(',')
+            put('"error": "' + repr(output_dict['error'])[1:-1], 3, '"')
         if output_dict.get('exit'):
             put(',')
             put('"exit": ' + str(output_dict['exit']), 3, '')

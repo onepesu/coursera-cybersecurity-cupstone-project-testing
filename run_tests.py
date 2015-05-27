@@ -5,6 +5,8 @@ import re
 import os
 import os.path
 import argparse
+import subprocess
+from copy import copy
 
 import settings
 
@@ -19,10 +21,12 @@ test_list = [
     for filename in files if re.search(json_re, filename)
 ]
 
-to_keep = ('run_tests.py', 'check_test.py', 'settings.template',
-           'settings.py', '.gitignore', 'io_to_json.py', 'create_integrity_report.py', 'create_confidentiality_report',
-           'create_correctness_or_crash_report.py')
-log_files = 'clean_test_log', 'test_log'
+to_keep = (
+    'run_tests.py', 'check_test.py', 'settings.template', 'settings.py',
+    '.gitignore', 'io_to_json.py', 'create_integrity_report.py',
+    'create_confidentiality_report', 'create_correctness_or_crash_report.py'
+)
+log_files = 'failed_test_log', 'test_log'
 
 
 def clean_folder(extra_files=()):
@@ -39,7 +43,7 @@ args = parser.parse_args()
 
 clean_folder()
 os.system('touch test_log')
-os.system('touch clean_test_log')
+os.system('touch failed_test_log')
 
 if args.test:
     custom_list = [
@@ -53,33 +57,53 @@ else:
 
 if args.team:
     path_to_build = settings.ALTERNATIVE_BUILD_PATH.format(args.team)
+    os.system('echo Testing team {}'.format(args.team))
 else:
     path_to_build = settings.BUILD_PATH
 
 if path_to_build[-1] != '/':
     path_to_build += '/'
 
-test_prefix = 'python check_test.py --prefix {} --test '.format(path_to_build)
+test_prefix = ['python', 'check_test.py', '--prefix', path_to_build, '--test']
 
 n = max([len(test_name) for test_name in custom_list])
+failures = False
 
-for test_name in custom_list:
+for i, test_name in enumerate(custom_list):
     clean_folder(log_files)
     short_test_name = re.sub('^' + test_dir + os.sep, '', test_name)
     print(short_test_name, end=' '*(n-len(test_name)) + '\t')
+    arguments = copy(test_prefix) + [test_name]
+    process = subprocess.Popen(
+        arguments, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    )
+    out, err = process.communicate()
+    try:
+        test_result = out.split('\n')[-2]
+    except IndexError:
+        test_result = 'Test crashed'
+    if err:
+        test_result = 'Test crashed'
+    start = '\n' if i else ''
     with open('test_log', 'a') as test_log:
-        with open('clean_test_log', 'a') as clean_test_log:
-            test_log.write('\n' + short_test_name + '\n')
-            clean_test_log.write('\n' + short_test_name + '\n')
-    os.system(test_prefix + test_name + ' >> test_log')
-    with open('test_log', 'r') as test_log:
-        test_result = test_log.readlines()[-1]
-    with open('clean_test_log', 'a') as clean_test_log:
-        if test_result == 'Test passed\n':
-            print(OK)
-            clean_test_log.write('test passed\n')
-        else:
-            print(FAIL)
-            clean_test_log.write('test failed\n')
+        test_log.write(start + short_test_name + '\n')
+        test_log.write(test_result + '\n')
+        test_log.write(out)
+        if err:
+            test_log.write('CRASH:\n')
+            test_log.write(err)
+    if test_result == 'Test passed':
+        print(OK)
+    else:
+        print(FAIL)
+        start = '\n' if failures else ''
+        failures = True
+        with open('failed_test_log', 'a') as failed_test_log:
+            failed_test_log.write(start + short_test_name + '\n')
+            failed_test_log.write(test_result + '\n')
+            failed_test_log.write(out)
+            if err:
+                failed_test_log.write('CRASH:\n')
+                failed_test_log.write(err)
 
 clean_folder(log_files)
