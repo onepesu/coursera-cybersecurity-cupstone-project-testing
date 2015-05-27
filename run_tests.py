@@ -30,7 +30,7 @@ def clean_folder(extra_files=()):
                  if os.path.isfile(os.path.join(current_dir, f))]
     for f in file_list:
         if f not in to_keep + extra_files:
-            os.system('rm {}'.format(f))
+            os.system('rm ./{}'.format(f))
 
 parser = argparse.ArgumentParser()
 parser.add_argument('test', nargs='*')
