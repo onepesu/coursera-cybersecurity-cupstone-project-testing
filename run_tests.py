@@ -63,7 +63,7 @@ else:
 if path_to_build[-1] != '/':
     path_to_build += '/'
 
-test_prefix = 'check_test.py --prefix {} --test '.format(path_to_build)
+test_prefix = './check_test.py --prefix {} --test '.format(path_to_build)
 
 n = max([len(test_name) for test_name in custom_list])
 failures = False
