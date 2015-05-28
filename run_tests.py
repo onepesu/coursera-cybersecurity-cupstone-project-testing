@@ -6,7 +6,6 @@ import os
 import os.path
 import argparse
 import subprocess
-from copy import copy
 
 import settings
 
@@ -64,7 +63,7 @@ else:
 if path_to_build[-1] != '/':
     path_to_build += '/'
 
-test_prefix = ['python', 'check_test.py', '--prefix', path_to_build, '--test']
+test_prefix = 'check_test.py --prefix {} --test '.format(path_to_build)
 
 n = max([len(test_name) for test_name in custom_list])
 failures = False
@@ -73,7 +72,7 @@ for i, test_name in enumerate(custom_list):
     clean_folder(log_files)
     short_test_name = re.sub('^' + test_dir + os.sep, '', test_name)
     print(short_test_name, end=' '*(n-len(test_name)) + '\t')
-    arguments = copy(test_prefix) + [test_name]
+    arguments = (test_prefix + test_name).split(' ')
     process = subprocess.Popen(
         arguments, stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
