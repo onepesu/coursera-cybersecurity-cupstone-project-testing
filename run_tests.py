@@ -23,7 +23,7 @@ test_list = [
 to_keep = (
     'run_tests.py', 'check_test.py', 'settings.template', 'settings.py',
     '.gitignore', 'io_to_json.py', 'create_integrity_report.py',
-    'create_confidentiality_report', 'create_correctness_or_crash_report.py'
+    'create_confidentiality_report.py', 'create_correctness_or_crash_report.py'
 )
 log_files = 'failed_test_log', 'test_log'
 

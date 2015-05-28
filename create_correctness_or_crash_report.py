@@ -38,9 +38,11 @@ def _translate(input_, team, type_, batch, open_file):
         put('')
         put('}', 2, '')
     put('')
-    put('],', 1)
+    put(']', 1, '')
     if batch:
+        put(',')
         put('"batch": "' + batch + '"', 1, '')
+    put('')
     put('}')
 
 
@@ -53,20 +55,17 @@ def translate(input_, team, filename=sys.stdout, type_="correctness", batch=''):
         text_filename = filename.replace("json", "txt")
         os.system("touch {}".format(os.path.join(settings.REPORTS_FOLDER, text_filename)))
 
-'''
-Sample:
 
 input_ = """
-running command logappend -T 1 -K secret -A -E Fred log1
-running command logappend -T 2 -K secret -A -E Fred -R 1 log1
-running command logappend -T 3 -K secret -L -E Fred -R 2 log1
+running command logappend -T 1 -K token -A -E Gauss log1
+running command logappend -T 2 -K token -A -E Gauss -R 1 log1
+running command logread -K token -R -E Gauss -E Gauss log1
 """
 
 team = 129
 
-delete_this = "delete_this.json"
+delete_this = "BitRot8.json"
 
 batch = 'yeah'
 
-translate(input_, team, delete_this, batch=batch)
-'''
+translate(input_, team, delete_this)#, batch=batch)
