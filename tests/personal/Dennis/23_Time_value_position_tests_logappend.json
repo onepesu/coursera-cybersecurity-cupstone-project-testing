@@ -67,7 +67,7 @@
             "exit": 255
         },
         {
-            "input": "logappend -T 1 2 -K secret -A -E Fred "
+            "input": "logappend -T 1 2 -K secret -A -E Fred"
         }
     ]
 }
