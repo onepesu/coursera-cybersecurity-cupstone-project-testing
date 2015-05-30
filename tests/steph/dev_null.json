@@ -1,0 +1,14 @@
+{
+    "tests": [
+        {
+            "input": "logappend -T 1 -K secret -A -E Fred /dev/null",
+            "output": "invalid\n",
+            "exit": 255
+        },
+        {
+            "input": "logread -K secret -S /dev/null",
+            "output": "integrity violation\n",
+            "exit": 255
+        }
+    ]
+}
