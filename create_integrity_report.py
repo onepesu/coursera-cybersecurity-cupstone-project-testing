@@ -2,6 +2,7 @@ from __future__ import print_function
 
 import sys
 import json
+import base64
 import os.path
 import settings
 
@@ -39,7 +40,9 @@ def _translate(input_, team, logfile, replacement, open_file):
     put('')
     put('],', 1)
     put('"logfile": "' + logfile + '",', 1)
-    put('"replacement": "' + replacement + '"', 1)
+    with open(replacement, 'r') as open_replacement:
+        encoded_replacement = base64.b64encode(open_replacement.read())
+    put('"replacement": "' + encoded_replacement + '"', 1)
     put('}')
 
 
@@ -60,19 +63,13 @@ def translate(input_, team, logfile, replacement, filename=sys.stdout):
         else:
             sys.exit(0)
 
-input_ = """
--R -G GERDA
-"""
-
 team = 129
-submission = 8
-
-report = "{team}_{submission}.json".format(
-    team=team, submission=submission
-)
-
-logfile = 'logfile_name'
-
-replacement = 'encoded_replacement'
+submission = 1
+report = "{team}_{submission}.json".format(team=team, submission=submission)
+logfile = 'log_file'
+replacement = 'replacement_file'
+input_ = """
+-R -E Fred
+"""
 
 translate(input_, team, logfile, replacement, report)

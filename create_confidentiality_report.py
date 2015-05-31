@@ -49,19 +49,13 @@ def translate(input_, team, logfile, output_, filename=sys.stdout):
         else:
             sys.exit(0)
 
-input_ = """
--R -E RUDY
-"""
-
 team = 129
-submission = 8
-
-report = "{team}_{submission}.json".format(
-    team=team, submission=submission
-)
-
-logfile = 'logfile_name'
-
+submission = 1
+report = "{team}_{submission}.json".format(team=team, submission=submission)
+logfile = 'log_file'
 replacement = 14
+input_ = """
+-R -E Fred
+"""
 
 translate(input_, team, logfile, replacement, report)

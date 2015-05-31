@@ -2,6 +2,7 @@ from __future__ import print_function
 
 import sys
 import json
+import base64
 import os.path
 import settings
 
@@ -41,7 +42,9 @@ def _translate(input_, team, type_, batch, open_file):
     put(']', 1, '')
     if batch:
         put(',')
-        put('"batch": "' + batch + '"', 1, '')
+        with open(batch, 'r') as open_replacement:
+            encoded_batch = base64.b64encode(open_replacement.read)
+        put('"batch": "' + encoded_batch + '"', 1, '')
     put('')
     put('}')
 
@@ -63,19 +66,14 @@ def translate(input_, team, filename=sys.stdout, type_="correctness", batch=''):
         else:
             sys.exit(0)
 
+team = 129
+submission = 1
+report = "{team}_{submission}.json".format(team=team, submission=submission)
+batch = 'batch_file'
 input_ = """
 running command logappend -T 1 -K token -A -E Gauss log1
 running command logappend -T 2 -K token -A -E Gauss -R 1 log1
 running command logread -K token -R -E Gauss -E Gauss log1
 """
-
-team = 129
-submission = 8
-
-report = "{team}_{submission}.json".format(
-    team=team, submission=submission
-)
-
-batch = 'batch'
 
 translate(input_, team, report)
