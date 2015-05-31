@@ -1,6 +1,7 @@
 from __future__ import print_function
 
 import sys
+import json
 import os.path
 import settings
 
@@ -9,13 +10,11 @@ def _translate(input_, team, logfile, replacement, open_file):
     def put(string, indentation=0, end='\n'):
         print('    '*indentation + string, end=end, file=open_file)
 
-    output = 0
     put('{')
     put('"target_team": ' + str(team), 1, '')
     put(',')
     put('"type": "integrity",', 1)
     put('"commands": [', 1, '')
-    input_ = input_.replace("running command ", '')
     input_ = input_.split("\n")[1:]
     for n, io in enumerate(input_):
         if not io:
@@ -26,10 +25,10 @@ def _translate(input_, team, logfile, replacement, open_file):
         else:
             put('')
         put('{', 2)
-        put('"program": "' + input_string[0], 3, '"')
+        put('"program": "logread"', 3, '')
         put(',')
         comm = ''
-        for n, item in enumerate(input_string[1:]):
+        for n, item in enumerate(input_string):
             if n == 0:
                 comm = '"' + item + '"'
             else:
@@ -52,22 +51,28 @@ def translate(input_, team, logfile, replacement, filename=sys.stdout):
             _translate(input_, team, logfile, replacement, open_file)
         text_filename = filename.replace("json", "txt")
         os.system("touch {}".format(os.path.join(settings.REPORTS_FOLDER, text_filename)))
-
-'''
-Sample:
+    with open(os.path.join(settings.REPORTS_FOLDER, filename), 'r') as open_file:
+        try:
+            json.load(open_file)
+        except ValueError:
+            print("malformed json")
+            sys.exit(1)
+        else:
+            sys.exit(0)
 
 input_ = """
-running command logappend -T 2 -K token1 -A -E Gauss -R 1 log1
-running command logappend -T 1 -K token -A -E Gauss log1
+-R -G GERDA
 """
 
 team = 129
+submission = 8
 
-delete_this = "delete_this.json"
+report = "{team}_{submission}.json".format(
+    team=team, submission=submission
+)
 
-logfile = 'yeah'
+logfile = 'logfile_name'
 
-replacement = "replace!!!!!"
+replacement = 'encoded_replacement'
 
-translate(input_, team, logfile, replacement, delete_this)
-'''
+translate(input_, team, logfile, replacement, report)

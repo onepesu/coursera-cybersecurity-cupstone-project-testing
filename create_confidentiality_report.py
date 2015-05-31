@@ -1,15 +1,14 @@
 from __future__ import print_function
 
 import sys
+import json
 import os.path
 import settings
-
 
 def _translate(input_, team, logfile, output_, open_file):
     def put(string, indentation=0, end='\n'):
         print('    '*indentation + string, end=end, file=open_file)
 
-    output = 0
     put('{')
     put('"target_team": ' + str(team), 1, '')
     put(',')
@@ -17,12 +16,11 @@ def _translate(input_, team, logfile, output_, open_file):
     put('"logfile": "' + logfile + '",', 1)
     put('"commands": [', 1)
     put('{', 2)
-    input_ = input_.replace("running command ", '')
     input_ = input_.replace("\n", '')
     input_ = input_.split(" ")
     put('"program": "logread",', 2)
     comm = ''
-    for n, item in enumerate(input_[1:]):
+    for n, item in enumerate(input_):
         if n == 0:
             comm = '"' + item + '"'
         else:
@@ -42,22 +40,28 @@ def translate(input_, team, logfile, output_, filename=sys.stdout):
             _translate(input_, team, logfile, output_, open_file)
         text_filename = filename.replace("json", "txt")
         os.system("touch {}".format(os.path.join(settings.REPORTS_FOLDER, text_filename)))
-
-'''
-Sample:
+    with open(os.path.join(settings.REPORTS_FOLDER, filename), 'r') as open_file:
+        try:
+            json.load(open_file)
+        except ValueError:
+            print("malformed json")
+            sys.exit(1)
+        else:
+            sys.exit(0)
 
 input_ = """
-running command logread -S -K token1 log1
+-R -E RUDY
 """
 
 team = 129
+submission = 8
 
-delete_this = "delete_this.json"
+report = "{team}_{submission}.json".format(
+    team=team, submission=submission
+)
 
-logfile = 'yeah'
+logfile = 'logfile_name'
 
-replacement = 15
+replacement = 14
 
-translate(input_, team, logfile, replacement, delete_this)
-'''
-
+translate(input_, team, logfile, replacement, report)

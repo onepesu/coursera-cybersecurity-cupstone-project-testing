@@ -1,6 +1,7 @@
 from __future__ import print_function
 
 import sys
+import json
 import os.path
 import settings
 
@@ -9,7 +10,6 @@ def _translate(input_, team, type_, batch, open_file):
     def put(string, indentation=0, end='\n'):
         print('    '*indentation + string, end=end, file=open_file)
 
-    output = 0
     put('{')
     put('"target_team": ' + str(team), 1, '')
     put(',')
@@ -54,7 +54,14 @@ def translate(input_, team, filename=sys.stdout, type_="correctness", batch=''):
             _translate(input_, team, type_, batch, open_file)
         text_filename = filename.replace("json", "txt")
         os.system("touch {}".format(os.path.join(settings.REPORTS_FOLDER, text_filename)))
-
+    with open(os.path.join(settings.REPORTS_FOLDER, filename), 'r') as open_file:
+        try:
+            json.load(open_file)
+        except ValueError:
+            print("malformed json")
+            sys.exit(1)
+        else:
+            sys.exit(0)
 
 input_ = """
 running command logappend -T 1 -K token -A -E Gauss log1
@@ -71,4 +78,4 @@ report = "{team}_{submission}.json".format(
 
 batch = 'batch'
 
-translate(input_, team, report)  # , batch=batch)
+translate(input_, team, report)
