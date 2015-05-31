@@ -63,9 +63,12 @@ running command logread -K token -R -E Gauss -E Gauss log1
 """
 
 team = 129
+submission = 8
 
-delete_this = "BitRot8.json"
+report = "{team}_{submission}.json".format(
+    team=team, submission=submission
+)
 
-batch = 'yeah'
+batch = 'batch'
 
-translate(input_, team, delete_this)#, batch=batch)
+translate(input_, team, report)  # , batch=batch)
