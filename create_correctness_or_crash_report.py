@@ -66,6 +66,9 @@ def translate(input_, team, filename=sys.stdout, type_="correctness", batch=''):
         else:
             sys.exit(0)
 
+'''
+Sample:
+
 team = 129
 submission = 1
 report = "{team}_{submission}.json".format(team=team, submission=submission)
@@ -77,3 +80,4 @@ running command logread -K token -R -E Gauss -E Gauss log1
 """
 
 translate(input_, team, report)
+'''

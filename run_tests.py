@@ -20,20 +20,25 @@ test_list = [
     for filename in files if re.search(json_re, filename)
 ]
 
-to_keep = (
-    'run_tests.py', 'check_test.py', 'settings.template', 'settings.py',
-    '.gitignore', 'io_to_json.py', 'create_integrity_report.py',
-    'create_confidentiality_report.py', 'create_correctness_or_crash_report.py'
-)
+personal = []
 log_files = 'failed_test_log', 'test_log'
+with open('.git/info/exclude', 'r') as git_exclude:
+    for excluded_filename in git_exclude.readlines():
+        if excluded_filename[0] != '#':
+            personal.append(excluded_filename.replace('\n', ''))
+to_keep = (
+    '.gitignore', 'check_test.py', 'settings.template', 'settings.py',
+    'spec', 'run_tests.py', 'io_to_json.py', 'create_integrity_report.py',
+    '.git', 'tests', 'create_confidentiality_report.py',
+    'create_correctness_or_crash_report.py'
+)
 
 
 def clean_folder(extra_files=()):
-    file_list = [f for f in os.listdir(current_dir)
-                 if os.path.isfile(os.path.join(current_dir, f))]
+    file_list = [f for f in os.listdir(current_dir)]
     for f in file_list:
-        if f not in to_keep + extra_files:
-            os.system('rm ./{}'.format(f))
+        if f not in tuple(personal) + to_keep + extra_files:
+            os.system('rm -rf ./{}'.format(f))
 
 parser = argparse.ArgumentParser()
 parser.add_argument('test', nargs='*')

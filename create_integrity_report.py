@@ -63,6 +63,9 @@ def translate(input_, team, logfile, replacement, filename=sys.stdout):
         else:
             sys.exit(0)
 
+'''
+Sample:
+
 team = 129
 submission = 1
 report = "{team}_{submission}.json".format(team=team, submission=submission)
@@ -73,3 +76,4 @@ input_ = """
 """
 
 translate(input_, team, logfile, replacement, report)
+'''
