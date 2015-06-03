@@ -49,14 +49,18 @@ def _translate(input_, team, type_, batch, open_file):
     put('}')
 
 
-def translate(input_, team, filename=sys.stdout, type_="correctness", batch=''):
+def translate(input_, team, filename=sys.stdout, type_="correctness", batch='', text=''):
     if isinstance(filename, file):
         _translate(input_, team, type_, batch, filename)
     else:
         with open(os.path.join(settings.REPORTS_FOLDER, filename), 'w') as open_file:
             _translate(input_, team, type_, batch, open_file)
         text_filename = filename.replace("json", "txt")
-        os.system("touch {}".format(os.path.join(settings.REPORTS_FOLDER, text_filename)))
+        text_file = os.path.join(settings.REPORTS_FOLDER, text_filename)
+        os.system("touch {}".format(text_file))
+        if text:
+            with open(text_file, 'w') as open_file:
+                open_file.write(text)
     with open(os.path.join(settings.REPORTS_FOLDER, filename), 'r') as open_file:
         try:
             json.load(open_file)
