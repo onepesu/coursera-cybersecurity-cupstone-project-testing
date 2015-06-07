@@ -1,56 +1,56 @@
 {
-    "tests": [
-        {
-            "input": "logappend -T 1 -K secret -A -E Fred log1"
-        },
-        {
-            "input": "logappend -T 2 -K secret -A -G Fred log1"
-        },
-        {
-            "input": "logappend -T 3 -K secret -A -E Fred -R 1 log1"
-        },
-        {
-            "input": "logappend -T 4 -K secret -A -G Fred -R 1 log1"
-        },
-        {
-            "input": "logappend -T 5 -K secret -L -E Fred -R 1 log1"
-        },
-        {
-            "input": "logappend -T 6 -K secret -L -G Fred -R 1 log1"
-        },
-        {
-            "input": "logappend -T 7 -K secret -A -E Fred -R 2 log1"
-        },
-        {
-            "input": "logappend -T 8 -K secret -A -G Fred -R 2 log1"
-        },
-        {
-            "input": "logappend -T 9 -K secret -L -E Fred -R 2 log1"
-        },
-        {
-            "input": "logappend -T 20 -K secret -L -G Fred -R 2 log1"
-        },
-        {
-            "input": "logappend -T 21 -K secret -A -E Fred -R 1 log1"
-        },
-        {
-            "input": "logappend -T 22 -K secret -A -G Fred -R 3 log1"
-        },
-        {
-            "input": "logread -K secret -I -E Fred -G Fred log1",
-            "output": "1,2"
-        },
-        {
-            "input": "logread -K secret -S log1",
-            "output": "Fred\nFred\n1:Fred\n3:Fred"
-        },
-        {
-            "input": "logread -K secret -T -E Fred log1",
-            "output": "21\n"
-        },
-        {
-            "input": "logread -K secret -R -E Fred log1",
-            "output": "1,2,1"
-        }
-    ]
+  "tests": [
+    {
+      "input": "logappend -T 1 -K secret -A -E Fred log1"
+    },
+    {
+      "input": "logappend -T 2 -K secret -A -G Fred log1"
+    },
+    {
+      "input": "logappend -T 3 -K secret -A -E Fred -R 1 log1"
+    },
+    {
+      "input": "logappend -T 4 -K secret -A -G Fred -R 1 log1"
+    },
+    {
+      "input": "logappend -T 5 -K secret -L -E Fred -R 1 log1"
+    },
+    {
+      "input": "logappend -T 6 -K secret -L -G Fred -R 1 log1"
+    },
+    {
+      "input": "logappend -T 7 -K secret -A -E Fred -R 2 log1"
+    },
+    {
+      "input": "logappend -T 8 -K secret -A -G Fred -R 2 log1"
+    },
+    {
+      "input": "logappend -T 9 -K secret -L -E Fred -R 2 log1"
+    },
+    {
+      "input": "logappend -T 20 -K secret -L -G Fred -R 2 log1"
+    },
+    {
+      "input": "logappend -T 21 -K secret -A -E Fred -R 1 log1"
+    },
+    {
+      "input": "logappend -T 22 -K secret -A -G Fred -R 3 log1"
+    },
+    {
+      "input": "logread -K secret -I -E Fred -G Fred log1",
+      "output": "1,2"
+    },
+    {
+      "input": "logread -K secret -S log1",
+      "output": "Fred\nFred\n1:Fred\n3:Fred"
+    },
+    {
+      "input": "logread -K secret -T -E Fred log1",
+      "output": "21\n"
+    },
+    {
+      "input": "logread -K secret -R -E Fred log1",
+      "output": "1,2,1"
+    }
+  ]
 }

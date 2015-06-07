@@ -1,14 +1,14 @@
 {
-    "tests": [
-        {
-            "input": "logappend -T 1 -K token -A -E Gauss log1"
-        },
-        {
-            "input": "logappend -T 2 -K token -A -E Gauss -R 1 -R 2 log1"
-        },
-        {
-            "input": "logread -K token -R -E Gauss log1",
-            "output": "2"
-        }
-    ]
+  "tests": [
+    {
+      "input": "logappend -T 1 -K token -A -E Gauss log1"
+    },
+    {
+      "input": "logappend -T 2 -K token -A -E Gauss -R 1 -R 2 log1"
+    },
+    {
+      "input": "logread -K token -R -E Gauss log1",
+      "output": "2"
+    }
+  ]
 }

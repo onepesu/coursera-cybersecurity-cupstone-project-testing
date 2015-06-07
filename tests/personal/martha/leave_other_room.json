@@ -1,15 +1,15 @@
 {
-    "tests": [
-        {
-            "input": "logappend -T 1 -K secret -A -E Fred log1"
-        },
-        {
-            "input": "logappend -T 2 -K secret -A -E Fred -R 1 log1"
-        },
-        {
-            "input": "logappend -T 3 -K secret -L -E Fred -R 2 log1",
-            "output": "invalid\n",
-            "exit": 255
-        }
-    ]
+  "tests": [
+    {
+      "input": "logappend -T 1 -K secret -A -E Fred log1"
+    },
+    {
+      "input": "logappend -T 2 -K secret -A -E Fred -R 1 log1"
+    },
+    {
+      "input": "logappend -T 3 -K secret -L -E Fred -R 2 log1",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
 }

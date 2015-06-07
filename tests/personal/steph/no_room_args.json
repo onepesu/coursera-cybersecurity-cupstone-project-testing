@@ -1,9 +1,9 @@
 {
-    "tests": [
-        {
-            "input": "logappend -K secret -T 1 -R -A -E Fred log1",
-            "output": "invalid\n",
-            "exit": 255
-        }
-    ]
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -R -A -E Fred log1",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
 }

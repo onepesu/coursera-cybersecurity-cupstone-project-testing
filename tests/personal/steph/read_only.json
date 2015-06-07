@@ -1,8 +1,8 @@
 {
-    "tests": [
-        {
-            "input": "logread -K token -S log1",
-            "output": "\n\n"
-        }
-    ]
+  "tests": [
+    {
+      "input": "logread -K token -S log1",
+      "output": "\n\n"
+    }
+  ]
 }

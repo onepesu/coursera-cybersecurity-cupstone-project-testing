@@ -1,11 +1,11 @@
 {
-    "tests": [
-        {
-            "input": "logappend -T 1 -K token -A -E Euler -E Gauss log1"
-        },
-        {
-            "input": "logread -K token -S log1",
-            "output": "Gauss\n\n"
-        }
-    ]
+  "tests": [
+    {
+      "input": "logappend -T 1 -K token -A -E Euler -E Gauss log1"
+    },
+    {
+      "input": "logread -K token -S log1",
+      "output": "Gauss\n\n"
+    }
+  ]
 }

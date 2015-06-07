@@ -1,23 +1,23 @@
 {
-    "tests": [
-        {
-            "input": "logappend -T 1 -K key -E Jim -A log1"
-        },
-        {
-            "input": "logappend -T 3 -K key -E Jim -A -R 1 log1"
-        },
-        {
-            "input": "logappend -T 15 -K key -E Jim -L -R 1 log1"
-        },
-        {
-            "input": "logread -I -K key -E Jim -G jOHN log1"
-        },
-        {
-            "input": "logread -I -K key -E Jim -E jOHN log1"
-        },
-        {
-            "input": "logread -I -K key -E Jim log1",
-            "output": "1"
-        }
-    ]
+  "tests": [
+    {
+      "input": "logappend -T 1 -K key -E Jim -A log1"
+    },
+    {
+      "input": "logappend -T 3 -K key -E Jim -A -R 1 log1"
+    },
+    {
+      "input": "logappend -T 15 -K key -E Jim -L -R 1 log1"
+    },
+    {
+      "input": "logread -I -K key -E Jim -G jOHN log1"
+    },
+    {
+      "input": "logread -I -K key -E Jim -E jOHN log1"
+    },
+    {
+      "input": "logread -I -K key -E Jim log1",
+      "output": "1"
+    }
+  ]
 }

@@ -1,29 +1,29 @@
 {
-    "tests": [
-        {
-            "input": "logappend -T 1 / -K secret -A -E Fred",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logappend -T 1 2/ -K secret -A -E Fred",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logappend -T 1 /2 -K secret -A -E Fred",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logappend -T 1 a/ -K secret -A -E Fred",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logappend -T 1 a/1 -K secret -A -E Fred",
-            "output": "invalid\n",
-            "exit": 255
-        }
-    ]
+  "tests": [
+    {
+      "input": "logappend -T 1 / -K secret -A -E Fred",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 1 2/ -K secret -A -E Fred",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 1 /2 -K secret -A -E Fred",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 1 a/ -K secret -A -E Fred",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 1 a/1 -K secret -A -E Fred",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
 }

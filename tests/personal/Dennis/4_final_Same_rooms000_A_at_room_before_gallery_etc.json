@@ -1,80 +1,80 @@
 {
-    "tests": [
-        {
-            "input": "logappend -T 1 -K key -E Jim -A -L log0",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logappend -T 2 -K key -E Jim -A log0"
-        },
-        {
-            "input": "logappend -T 3 -K key -E Jim -A -R1 log0",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logappend -T 4 -K key -E Jim -A -R 0 log0"
-        },
-        {
-            "input": "logread -S -K key log0",
-            "output": "Jim\n\n0:Jim"
-        },
-        {
-            "input": "logappend -T 1 -K key -E Jim -A -R 1 log1",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logappend -T 1 -K key -E Jim -A log2"
-        },
-        {
-            "input": "logappend -T 2 -K key -E Jim -A -R 1 log2"
-        },
-        {
-            "input": "logappend -T 3 -K key -E Ann -A log2"
-        },
-        {
-            "input": "logappend -T 4 -K key -E Ann -A -R 0000000000000001 log2"
-        },
-        {
-            "input": "logappend -T 13 -K key -E Jim -L -R 1 log2"
-        },
-        {
-            "input": "logappend -T 14 -K key -E Jim -A -R 00005 log2"
-        },
-        {
-            "input": "logappend -T 15 -K key -E Ann -L -R 1 log2"
-        },
-        {
-            "input": "logappend -T 16 -K key -E Ann -A -R 0000000005 log2"
-        },
-        {
-            "input": "logappend -T 17 -K key -G John -A log2"
-        },
-        {
-            "input": "logappend -T 18 -K key -G John -A -R 00000000000000000005 log2"
-        },
-        {
-            "input": "logappend -T 25 -K key -E CEO -A log2"
-        },
-        {
-            "input": "logappend -T 28 -K key -E CEO -A -R 0005 log2"
-        },
-        {
-            "input": "logread -I -K key -E Ann -E Jim log2",
-            "output": "1,5"
-        },
-        {
-            "input": "logread -I -K key -E Ann -E Jim -G John log2",
-            "output": "5"
-        },
-        {
-            "input": "logread -I -K key -E Ann -E Jim -E Peter log2"
-        },
-        {
-            "input": "logread -K key -I -E Ann -E Jim -E CEO log2",
-            "output": "5"
-        }
-    ]
+  "tests": [
+    {
+      "input": "logappend -T 1 -K key -E Jim -A -L log0",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 2 -K key -E Jim -A log0"
+    },
+    {
+      "input": "logappend -T 3 -K key -E Jim -A -R1 log0",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 4 -K key -E Jim -A -R 0 log0"
+    },
+    {
+      "input": "logread -S -K key log0",
+      "output": "Jim\n\n0:Jim"
+    },
+    {
+      "input": "logappend -T 1 -K key -E Jim -A -R 1 log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 1 -K key -E Jim -A log2"
+    },
+    {
+      "input": "logappend -T 2 -K key -E Jim -A -R 1 log2"
+    },
+    {
+      "input": "logappend -T 3 -K key -E Ann -A log2"
+    },
+    {
+      "input": "logappend -T 4 -K key -E Ann -A -R 0000000000000001 log2"
+    },
+    {
+      "input": "logappend -T 13 -K key -E Jim -L -R 1 log2"
+    },
+    {
+      "input": "logappend -T 14 -K key -E Jim -A -R 00005 log2"
+    },
+    {
+      "input": "logappend -T 15 -K key -E Ann -L -R 1 log2"
+    },
+    {
+      "input": "logappend -T 16 -K key -E Ann -A -R 0000000005 log2"
+    },
+    {
+      "input": "logappend -T 17 -K key -G John -A log2"
+    },
+    {
+      "input": "logappend -T 18 -K key -G John -A -R 00000000000000000005 log2"
+    },
+    {
+      "input": "logappend -T 25 -K key -E CEO -A log2"
+    },
+    {
+      "input": "logappend -T 28 -K key -E CEO -A -R 0005 log2"
+    },
+    {
+      "input": "logread -I -K key -E Ann -E Jim log2",
+      "output": "1,5"
+    },
+    {
+      "input": "logread -I -K key -E Ann -E Jim -G John log2",
+      "output": "5"
+    },
+    {
+      "input": "logread -I -K key -E Ann -E Jim -E Peter log2"
+    },
+    {
+      "input": "logread -K key -I -E Ann -E Jim -E CEO log2",
+      "output": "5"
+    }
+  ]
 }

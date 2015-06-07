@@ -1,11 +1,11 @@
 {
-    "tests": [
-        {
-            "input": "logappend -T 1 -K secret -A -E Fred f"
-        },
-        {
-            "input": "logread -K secret -S ./f",
-            "output": "Fred\n\n"
-        }
-    ]
+  "tests": [
+    {
+      "input": "logappend -T 1 -K secret -A -E Fred f"
+    },
+    {
+      "input": "logread -K secret -S ./f",
+      "output": "Fred\n\n"
+    }
+  ]
 }

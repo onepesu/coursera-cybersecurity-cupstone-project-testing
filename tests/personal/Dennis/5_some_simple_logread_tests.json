@@ -1,112 +1,112 @@
 {
-    "tests": [
-        {
-            "input": "logappend -T 1 -K key -E Jim -A log2"
-        },
-        {
-            "input": "logappend -T 2 -K key -E Jim -A -R 1 log2"
-        },
-        {
-            "input": "logappend -T 3 -K key -E Ann -A log2"
-        },
-        {
-            "input": "logappend -T 4 -K key -E Ann -A -R 0000000000000001 log2"
-        },
-        {
-            "input": "logread -I -K key -E Ann -E Jim log2",
-            "output": "1"
-        },
-        {
-            "input": "logread -T -K key -E Ann -E Jim log2",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logread -S -K key -E Ann -E Jim log2",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logread -R 01 -K key -E Ann -E Jim log2",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logread -R -K key -E Ann -E Jim log2",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logread -R -K key -E Jim log2",
-            "output": "1"
-        },
-        {
-            "input": "logread -T -K key -E Jim log2",
-            "output": "3\n"
-        },
-        {
-            "input": "logread -S -K key -E Jim log2",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logread -R 01 -K key -E Jim log2",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logappend -T 1 -K key -G Jim -A log3"
-        },
-        {
-            "input": "logappend -T 2 -K key -G Jim -A -R 1 log3"
-        },
-        {
-            "input": "logappend -T 3 -K key -G Ann -A log3"
-        },
-        {
-            "input": "logappend -T 4 -K key -G Ann -A -R 0000000000000001 log3"
-        },
-        {
-            "input": "logread -I -K key -G Ann -G Jim log3",
-            "output": "1"
-        },
-        {
-            "input": "logread -T -K key -G Ann -G Jim log3",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logread -S -K key -G Ann -G Jim log3",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logread -R 01 -K key -G Ann -G Jim log3",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logread -R -K key -G Ann -G Jim log3",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logread -R -K key -G Jim log3",
-            "output": "1"
-        },
-        {
-            "input": "logread -T -K key -G Jim log3",
-            "output": "3\n"
-        },
-        {
-            "input": "logread -S -K key -G Jim log3",
-            "output": "invalid\n",
-            "exit": 255
-        },
-        {
-            "input": "logread -R 01 -K key -G Jim log3",
-            "output": "invalid\n",
-            "exit": 255
-        }
-    ]
+  "tests": [
+    {
+      "input": "logappend -T 1 -K key -E Jim -A log2"
+    },
+    {
+      "input": "logappend -T 2 -K key -E Jim -A -R 1 log2"
+    },
+    {
+      "input": "logappend -T 3 -K key -E Ann -A log2"
+    },
+    {
+      "input": "logappend -T 4 -K key -E Ann -A -R 0000000000000001 log2"
+    },
+    {
+      "input": "logread -I -K key -E Ann -E Jim log2",
+      "output": "1"
+    },
+    {
+      "input": "logread -T -K key -E Ann -E Jim log2",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -S -K key -E Ann -E Jim log2",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -R 01 -K key -E Ann -E Jim log2",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -R -K key -E Ann -E Jim log2",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -R -K key -E Jim log2",
+      "output": "1"
+    },
+    {
+      "input": "logread -T -K key -E Jim log2",
+      "output": "3\n"
+    },
+    {
+      "input": "logread -S -K key -E Jim log2",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -R 01 -K key -E Jim log2",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 1 -K key -G Jim -A log3"
+    },
+    {
+      "input": "logappend -T 2 -K key -G Jim -A -R 1 log3"
+    },
+    {
+      "input": "logappend -T 3 -K key -G Ann -A log3"
+    },
+    {
+      "input": "logappend -T 4 -K key -G Ann -A -R 0000000000000001 log3"
+    },
+    {
+      "input": "logread -I -K key -G Ann -G Jim log3",
+      "output": "1"
+    },
+    {
+      "input": "logread -T -K key -G Ann -G Jim log3",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -S -K key -G Ann -G Jim log3",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -R 01 -K key -G Ann -G Jim log3",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -R -K key -G Ann -G Jim log3",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -R -K key -G Jim log3",
+      "output": "1"
+    },
+    {
+      "input": "logread -T -K key -G Jim log3",
+      "output": "3\n"
+    },
+    {
+      "input": "logread -S -K key -G Jim log3",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -R 01 -K key -G Jim log3",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
 }

@@ -7,7 +7,7 @@ import settings
 
 def _translate(input_, output, open_file):
     def put(string, indentation=0, end='\n'):
-        print('    '*indentation + string, end=end, file=open_file)
+        print('  '*indentation + string, end=end, file=open_file)
 
     put('{')
     put('"tests": [', 1, '')
