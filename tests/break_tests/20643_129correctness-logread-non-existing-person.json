@@ -1,0 +1,10 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 1 -K UBSVZGIX -E Steve -A testlog"
+    },
+    {
+      "input": "logread -R -K UBSVZGIX -E John testlog"
+    }
+  ]
+}

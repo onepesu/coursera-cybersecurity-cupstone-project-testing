@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch"
+    },
+    {
+      "input": "logread -K secret -S ./ps_ref_dir_batch",
+      "output": "Name,aName\nbName\n"
+    }
+  ],
+  "batch": "LUsgc2VjcmV0IC1UIDEgLUEgLUUgTmFtZSAuL3BzX3JlZl9kaXJfYmF0Y2gKLUsgc2VjcmV0IC1UIDIgLUEgLUUgYU5hbWUgcHNfcmVmX2Rpcl9iYXRjaAotSyBzZWNyZXQgLVQgMyAtQSAtRyBiTmFtZSAuL3BzX3JlZl9kaXJfYmF0Y2g="
+}

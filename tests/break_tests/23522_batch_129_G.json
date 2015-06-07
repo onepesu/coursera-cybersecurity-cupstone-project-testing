@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch"
+    },
+    {
+      "input": "logread -T -G EAlessia -K s3cr3t pippo.log",
+      "output": "0\n"
+    }
+  ],
+  "batch": "LUsgczNjcjN0IC1UIDEgLUEgLUUgRUFsZXNzaWEgcGlwcG8ubG9nCi1LIHMzY3IzdCAtVCAyIC1BIC1HIEdBbGVzc2lhIHBpcHBvLmxvZwo="
+}

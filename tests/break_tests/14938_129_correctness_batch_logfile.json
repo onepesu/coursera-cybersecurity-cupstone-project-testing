@@ -1,0 +1,9 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\n"
+    }
+  ],
+  "batch": "LUsgU0VDUkVUIC1UIDEgLUUgQk9CIC1BIFRQV01WRE1aDQotSyBTRUNSRVQgLVQgMiAtRSBCT0IgLUEgLVIgNSBUUFdNVkRNWg0KLUsgU0VDUkVUIC1UIDMgLUUgQk9CIC1MIC1SIDUgVFBXTVZETVoy"
+}

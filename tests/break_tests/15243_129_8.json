@@ -1,0 +1,11 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K token -T 2 -E emp -A ./1"
+    },
+    {
+      "input": "logread -K token -S ./1",
+      "output": "emp\n\n"
+    }
+  ]
+}

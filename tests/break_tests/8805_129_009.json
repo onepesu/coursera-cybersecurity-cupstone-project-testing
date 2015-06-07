@@ -1,0 +1,15 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -E Lou -A exit_diff"
+    },
+    {
+      "input": "logappend -K secret -T 3 -E Lou -A -R 7 exit_diff"
+    },
+    {
+      "input": "logappend -K secret -T 5 -E Lou -L -R 8 exit_diff",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}

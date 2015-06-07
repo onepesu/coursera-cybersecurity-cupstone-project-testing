@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\n"
+    },
+    {
+      "input": "logread -K secret -S logBinBrec",
+      "output": "Joey,NotJoey\n\n"
+    }
+  ],
+  "batch": "LUsgc2VjcmV0IC1UIDIgLUUgSm9leSAtQSBsb2dCaW5CcmVjCi1CIGJhdGNoCi1LIHNlY3JldCAtVCAzIC1FIE5vdEpvZXkgLUEgbG9nQmluQnJlYw=="
+}

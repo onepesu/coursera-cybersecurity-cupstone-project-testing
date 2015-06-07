@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\n"
+    },
+    {
+      "input": "logread -K secret -S thelog",
+      "output": "\ngoo\n1:goo"
+    }
+  ],
+  "batch": "LUIgYmF0Y2gKLVQgMSAtSyBzZWNyZXQgLUcgZ29vIC1BIHRoZWxvZwotVCAyIC1LIHNlY3JldCAtRyBnb28gLUEgLVIgMSB0aGVsb2cK"
+}

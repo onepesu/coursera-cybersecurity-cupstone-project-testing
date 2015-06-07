@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\n"
+    },
+    {
+      "input": "logread -K secret -S batch_different_keys",
+      "output": "Name\nbName\n"
+    }
+  ],
+  "batch": "LUsgc2VjcmV0IC1UIDEgLUEgLUUgTmFtZSBiYXRjaF9kaWZmZXJlbnRfa2V5cwotSyBub3RzZWNyZXQgLVQgMiAtQSAtRSBhTmFtZSBiYXRjaF9kaWZmZXJlbnRfa2V5cwotSyBzZWNyZXQgLVQgNiAtQSAtRyBiTmFtZSBiYXRjaF9kaWZmZXJlbnRfa2V5cwo="
+}

@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch"
+    },
+    {
+      "input": "logread -K secret -S TESTLOG2",
+      "output": "\nPLUTO\n"
+    }
+  ],
+  "batch": "LVQgMSAtSyBzZWNyZXQgLUUgR0lHR0lPIC1BIFRFU1RMT0c0Ci1UIDEgLUsgc2VjcmV0IC1FIEdJR0dJTyAtQSAuLi9URVNUTE9HMQotVCAyIC1LIHNlY3JldCAtRyBQTFVUTyAtQSBURVNUTE9HMg=="
+}

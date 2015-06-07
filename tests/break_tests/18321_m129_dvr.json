@@ -1,0 +1,9 @@
+{
+  "tests": [
+    {
+      "input": "logread -K secret -S /dev/null",
+      "output": "integrity violation\n",
+      "exit": 255
+    }
+  ]
+}

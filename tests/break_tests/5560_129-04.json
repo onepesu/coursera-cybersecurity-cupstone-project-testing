@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\n"
+    },
+    {
+      "input": "logread -K secret -S TESTLOG2",
+      "output": "\nGIGGIO\n"
+    }
+  ],
+  "batch": "LVQgMSAtSyBzZWNyZXQgLUcgR0lHR0lPIC1MIFRFU1RMT0cxCi1UIDEgLUsgc2VjcmV0IC1HIEdJR0dJTyAtQSBURVNUTE9HMg=="
+}

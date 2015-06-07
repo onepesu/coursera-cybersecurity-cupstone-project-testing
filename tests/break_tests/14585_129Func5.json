@@ -1,0 +1,20 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -E Fred -A log1"
+    },
+    {
+      "input": "logappend -K secret -T 2 -E Fred -A -R 1 log1"
+    },
+    {
+      "input": "logappend -K secret -T 3 -E Fred -L -R 2 log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -K secret -T 4 -E Fred -L log1",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -G Guest -A C1CE"
+    },
+    {
+      "input": "logappend -K secret -T 2 -G Guest -A -R 1 C1CE"
+    },
+    {
+      "input": "logappend -K secret -T 3 -G Guest -L -R 2 C1CE",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}

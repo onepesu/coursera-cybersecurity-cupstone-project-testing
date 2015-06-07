@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch"
+    },
+    {
+      "input": "logread -K s -S log1",
+      "output": "Fred\nFred\n"
+    },
+    {
+      "input": "logread -K s -S ./log1",
+      "output": "Fred\nFred\n"
+    }
+  ],
+  "batch": "LVQgMSAtSyBzIC1BIC1HIEZyZWQgbG9nMQotVCAyIC1LIHMgLUEgLUUgRnJlZCAuL2xvZzEK"
+}

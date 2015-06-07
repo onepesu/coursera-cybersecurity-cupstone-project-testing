@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\n"
+    },
+    {
+      "input": "logread -K secret -S TESTLOG2",
+      "output": "\nPLUTO\n"
+    }
+  ],
+  "batch": "LVQgMSAtQSAtRSBHSUdHSU8gLUsgc2VjcmV0IFRFU1RMT0c0Ci1BIC1FIEdJR0dJTyAtSyBzZWNyZXQgVEVTVExPRzYKLVQgMSAtSyBzZWNyZXQgLUUgR0lHR0lPIC1BIC4uL1RFU1RMT0cxCi1UIDIgLUsgc2VjcmV0IC1HIFBMVVRPIC1BIC1BIC1BIC1BIC1BIFRFU1RMT0cy"
+}

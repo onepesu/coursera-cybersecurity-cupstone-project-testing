@@ -1,0 +1,18 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 1 -K secret -E Fred -A log1"
+    },
+    {
+      "input": "logappend -T 5 -K secret -E Fred -A -R 1 log1"
+    },
+    {
+      "input": "logread -K secret -T -E Fred log1",
+      "output": "4\n"
+    },
+    {
+      "input": "logread -K secret -T -G Fred log1",
+      "output": "0\n"
+    }
+  ]
+}

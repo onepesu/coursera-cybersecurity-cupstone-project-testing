@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch"
+    },
+    {
+      "input": "logread -K secret -S LOGFILE",
+      "output": "ALEX\nGEO\n\n1:GEO"
+    }
+  ],
+  "batch": "LVQgMSAtSyBzZWNyZXQgLUUgQUxFWCAtQSBMT0dGSUxFCi1UIDIgLUsgc2VjcmV0IC1HIEdFTyAtQSBMT0dGSUxFCi1UIDMgLUsgc2VjcmV0IC1HIEdFTyAtQSAtUiAxIC4vTE9HRklMRQo="
+}

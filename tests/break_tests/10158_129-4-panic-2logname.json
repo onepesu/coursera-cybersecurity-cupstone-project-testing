@@ -1,0 +1,9 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\ninvalid\n"
+    }
+  ],
+  "batch": "LVQgMSAtSyBzZWNyZXQgLUEgLUUgQmlsbCBsb2cxCi1UIDIgLUsgc2VjcmV0IC1BIC1FIEJpbGwgLVIgMSBsb2cxCi1UIDMgLUsgd3JvbmcgLUUgQmlsbCAtTCAtUiAxIGxvZzEKLVQgMyAtSyBzZWNyZXQgLUUgQmlsbCAtTCAtUiAxIGxvZzEKLVQgMSAtSyBzZWNyZXQyIC1BIC1FIEJpbGwgbG9nMgotVCA1IC1LIHNlY3JldCAtTCAtRSBCaWxsIGxvZzEKLVQgMiAtSyBzZWNyZXQyIC1BIC1FIEJpbGwgLVIgMiBsb2cyCi1UIDEyIC1LIHNlY3JldCAtQSAtRSBCaWxsIGxvZzEKLVQgMTMgLUsgc2VjcmV0IC1BIC1FIEJpbGwgLVIgMiBsb2cxCi1UIDMgLUsgc2VjcmV0IC1MIC1SIDIgLUUgQmlsbCBsb2cyCi1UIDUgLUsgc2VjcmV0MiAtTCAtUiAyIC1FIEJpbGwgbG9nMgo="
+}

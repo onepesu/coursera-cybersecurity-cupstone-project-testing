@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch"
+    },
+    {
+      "input": "logread -K token -S log",
+      "output": "\n\n"
+    }
+  ],
+  "batch": "LVQgMSAtSyB0b2tlbiAtRyBwZXJyeSAtQSBsb2cNCi1UIDIgLUsgdG9rZW4gLUcga2F6IC1BIGxvZw0KLVQgMyAtSyBuZXd0b2tlbiAtRyBuaWNrIC1BIG5ld2xvZw0KLVQgNCAtSyBuZXd0b2tlbiAtRyBsYW5pIC1BIG5ld2xvZw=="
+}

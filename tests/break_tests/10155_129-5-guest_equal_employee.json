@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -G Gil -A log1"
+    },
+    {
+      "input": "logappend -K secret -T 2 -G Gil -A -R 1 log1"
+    },
+    {
+      "input": "logread -K secret -R -E Gil log1"
+    }
+  ]
+}

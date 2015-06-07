@@ -1,0 +1,15 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -E Lou -A enter_after_leave"
+    },
+    {
+      "input": "logappend -K secret -T 7 -E Lou -L enter_after_leave"
+    },
+    {
+      "input": "logappend -K secret -T 9 -E Lou -A -R 5 enter_after_leave",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}

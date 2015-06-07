@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -E Bill -A log1"
+    },
+    {
+      "input": "logappend -K secret -T 2 -E Bill -A -R 1 log1"
+    },
+    {
+      "input": "logappend -K secret -T 3 -E Bill -L -R 1 log1"
+    },
+    {
+      "input": "logappend -K secret -T 4 -E Bill -A -R 11 log1"
+    },
+    {
+      "input": "logappend -K secret -T 5 -E Bill -L -R 11 log1"
+    },
+    {
+      "input": "logappend -K secret -T 6 -E Bill -A -R 2 log1"
+    },
+    {
+      "input": "logappend -K secret -T 7 -E Bill -L -R 2 log1"
+    },
+    {
+      "input": "logread -K secret -I -E Bill log1",
+      "output": "1,2,11"
+    }
+  ]
+}

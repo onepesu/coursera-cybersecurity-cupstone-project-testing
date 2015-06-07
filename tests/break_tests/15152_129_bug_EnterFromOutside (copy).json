@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -A -E Bob log"
+    },
+    {
+      "input": "logappend -K secret -T 2 -A -E Bob -R 1 log"
+    },
+    {
+      "input": "logappend -K secret -T 4 -L -E Bob -R 1 log"
+    },
+    {
+      "input": "logappend -K secret -T 5 -L -E Bob log"
+    },
+    {
+      "input": "logappend -K secret -T 102 -A -E Bob -R 1 log",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}

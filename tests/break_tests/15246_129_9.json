@@ -1,0 +1,15 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K token -T 1 -G guest -A log"
+    },
+    {
+      "input": "logappend -K token -T 2 -G guest -A -R 1 log"
+    },
+    {
+      "input": "logappend -K token -T 3 -G guest -L -R 2 log",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}

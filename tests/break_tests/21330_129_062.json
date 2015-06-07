@@ -1,0 +1,15 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\ninvalid\ninvalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K secret -S batch",
+      "output": "integrity violation\n",
+      "exit": 255
+    }
+  ],
+  "batch": "LUsgc2VjcmV0IC1UIDEgLUEgLUUgZW1OYW1lIGJhdGNoCi1LIHNlY3JldCAtVCAyIC1BIC1FIGVtTmFtZVR3byBiYXRjaA=="
+}

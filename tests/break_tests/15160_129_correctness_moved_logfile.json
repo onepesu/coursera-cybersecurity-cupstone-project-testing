@@ -1,0 +1,18 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K SECRET -T 1 -G GERDA -A tmp/LOGFILE",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -K SECRET -T 2 -G GERDA -A -R 5 tmp/LOGFILE",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K SECRET -S tmp/LOGFILE",
+      "output": "\n\n"
+    }
+  ]
+}

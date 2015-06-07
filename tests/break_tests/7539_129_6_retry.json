@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -E FOO -A thelog"
+    },
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\n"
+    },
+    {
+      "input": "logread -K secret -S thelog",
+      "output": "FOO\nGEORGE\n\n1:GEORGE"
+    }
+  ],
+  "batch": "LVQgMiAtSyBzZWNyZXQgLUcgR0VPUkdFIC1BIHRoZWxvZwotVCAzIC1LIHNlY3JldCAtRyBHRU9SR0UgLUEgLVIgMSB0aGVsb2cKLVQgNCAtSyB3cm9uZyAtRyBnb28gLUEgdGhlbG9nCg=="
+}

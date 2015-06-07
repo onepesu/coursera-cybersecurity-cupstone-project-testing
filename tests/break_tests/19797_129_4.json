@@ -1,0 +1,58 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 1 -K SECRET -E MAURO -A log"
+    },
+    {
+      "input": "logappend -T 2 -K SECRET -G VANESSA -A log"
+    },
+    {
+      "input": "logappend -T 3 -K SECRET -E MAURO -R 10000 -A log"
+    },
+    {
+      "input": "logappend -T 5 -K SECRET -G VANESSA -R 30000 -A log"
+    },
+    {
+      "input": "logappend -T 9 -K SECRET -E MAURO -R 10000 -L log"
+    },
+    {
+      "input": "logappend -T 100 -K SECRET -G VANESSA -R 30000 -L log"
+    },
+    {
+      "input": "logappend -T 101 -K SECRET -G VANESSA -L log"
+    },
+    {
+      "input": "logappend -T 102 -K SECRET -E MAURO -L log"
+    },
+    {
+      "input": "logappend -T 105 -K SECRET -E MAURO -A log"
+    },
+    {
+      "input": "logappend -T 106 -K SECRET -G VANESSA -A log"
+    },
+    {
+      "input": "logappend -T 109 -K SECRET -G VANESSA -L log"
+    },
+    {
+      "input": "logappend -T 110 -K SECRET -E MAURO -L log"
+    },
+    {
+      "input": "logappend -T 200 -K SECRET -E MAURO -A log"
+    },
+    {
+      "input": "logappend -T 1000 -K SECRET -G VANESSA -A log"
+    },
+    {
+      "input": "logread -K SECRET -T -E MAURO log",
+      "output": "906\n"
+    },
+    {
+      "input": "logread -K SECRET -T -G VANESSA log",
+      "output": "102\n"
+    },
+    {
+      "input": "logread -K SECRET -T -E VANESSA log",
+      "output": "0\n"
+    }
+  ]
+}

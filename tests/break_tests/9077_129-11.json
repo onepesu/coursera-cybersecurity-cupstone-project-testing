@@ -1,0 +1,41 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 1 -K secret -E AAA -A log"
+    },
+    {
+      "input": "logappend -T2 -K secret -E BBB -A log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T=3 -K secret -E CCC -A log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend --T 4 -K secret -E DDD -A log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend --T=5 -K secret -E EEE -A log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend T 6 -K secret -E FFF -A log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T  7 -K secret -E GGG -A log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K secret -S log",
+      "output": "AAA\n\n"
+    }
+  ]
+}

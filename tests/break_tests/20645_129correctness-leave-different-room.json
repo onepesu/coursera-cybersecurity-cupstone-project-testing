@@ -1,0 +1,15 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 1 -K UBSVZGIX -E Steve -A testlog"
+    },
+    {
+      "input": "logappend -T 2 -K UBSVZGIX -E Steve -A -R 3 testlog"
+    },
+    {
+      "input": "logappend -T 3 -K UBSVZGIX -E Steve -L -R 2 testlog",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}

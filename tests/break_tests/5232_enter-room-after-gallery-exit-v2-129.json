@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -G GERDA -A log"
+    },
+    {
+      "input": "logappend -K secret -T 2 -G GERDA -A -R 22 log"
+    },
+    {
+      "input": "logappend -K secret -T 3 -G GERDA -L -R 22 log"
+    },
+    {
+      "input": "logappend -K secret -T 4 -G GERDA -L log"
+    },
+    {
+      "input": "logappend -K secret -T 5 -G GERDA -A -R 22 log",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}

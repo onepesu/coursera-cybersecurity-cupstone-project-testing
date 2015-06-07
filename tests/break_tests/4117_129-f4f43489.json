@@ -1,0 +1,17 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\n"
+    },
+    {
+      "input": "logread -K pass1 -T -G BARNEY log1",
+      "output": "0\n"
+    },
+    {
+      "input": "logread -K pass1 -T -G barney log1",
+      "output": "0\n"
+    }
+  ],
+  "batch": "LUsgcGFzczEgLVQgMSAtRyBCQVJORVkgLUEgbG9nMQ0KLUsgcGFzczEgLVQgMiAtRyBmcmVkIC1BIGxvZzENCi1LIHBhc3MxIC1UIDMgLUcgQkFSTkVZIC1BIC1SIDEwMSBsb2cxDQotSyBwYXNzMSAtVCA0IC1FIHdpbG1hIC1BIGxvZzENCi1LIHBhc3MxIC1UIDUgLUcgQkFSTkVZIC1MIC1SIDEwMSBsb2cxDQotSyBwYXNzMSAtVCA2IC1FIHdpbG1hIC1BIC1SIDEwMiBsb2cxDQotSyBwYXNzMSAtVCA3IC1HIEJBUk5FWSAtQSAtUiAxMDIgbG9nMQ0KLUsgcGFzczEgLVQgOCAtRSBTQUxMWSAtQSBsb2cxDQotSyBwYXNzMSAtVCAyNSAtRyBmcmVkIC1MIGxvZzENCg0K"
+}

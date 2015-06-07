@@ -1,0 +1,20 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -E Joe -A log1"
+    },
+    {
+      "input": "logappend -K secret -T 2 -E Joe -L log1"
+    },
+    {
+      "input": "logappend -K secret -T 3 -E Joe -A -R 0 log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K secret -S",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}

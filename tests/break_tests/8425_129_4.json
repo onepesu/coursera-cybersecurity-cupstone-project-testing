@@ -1,0 +1,7 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K token -T 2 -E emp -A .,?"
+    }
+  ]
+}

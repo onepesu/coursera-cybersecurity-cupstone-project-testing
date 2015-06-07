@@ -1,0 +1,10 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -E GERDA -A log"
+    },
+    {
+      "input": "logread -K secret -E GEORGE -R log"
+    }
+  ]
+}

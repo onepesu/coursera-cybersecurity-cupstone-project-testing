@@ -1,0 +1,15 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 1 -K 1 -A -E miro log"
+    },
+    {
+      "input": "logappend -T 2 -K 1 -L -E miro log"
+    },
+    {
+      "input": "logappend -T 3 -K 1 -A -R 50 -E miro log",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -E Lou -A ./log_with_ps"
+    },
+    {
+      "input": "logread -K secret -S ./log_with_ps",
+      "output": "Lou\n\n"
+    }
+  ]
+}

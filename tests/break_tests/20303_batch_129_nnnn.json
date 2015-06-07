@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\ninvalid\ninvalid\n"
+    },
+    {
+      "input": "logread -K secret -T -E Domenic pippo.log",
+      "output": "0\n"
+    }
+  ],
+  "batch": "cGlwcG8ubG9nIC1BIC1UIDEgLUUgQWxlc3NpYSAtSyBzZWNyZXQKcGlwcG8ubG9nIC1BIC1LIHNlY3JldCAtVCAyIC1FIERvbWVuaWNvCi1UIDMgcGlwcG8ubG9nIC1BIC1LIHNlY3JldCAtRSBSaXRhCi1UIDQgcGlwcG8ubG9nIC1BIC1SIC0xMyAtSyBzZWNyZXQgLUUgUml0YQpwaXBwby5sb2cgLVIgMTQgLUEgLUsgc2VjcmV0IC1UIDUgLUUgUml0YQpwaXBwby5sb2cgLUEgLVQgNiAtRSBBbGVzc2lhIC1LIHNlY3JldCAtUiAxNApwaXBwby5sb2cgLUEgLVQgMTA3Mzc0MTgyNCAtRSBBbGVzc2lhIC1LIHNlY3JldCAtUiA1CnBpcHBvLmxvZyAtQSAtSyBzZWNyZXQgLVQgMTA3Mzc0MTgyNSAtRSBEb21lbmljCg=="
+}

@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -E Ronald -A newlog"
+    },
+    {
+      "input": "logappend -K secret -T 2 -E Ronald -R 13 -A newlog"
+    },
+    {
+      "input": "logread -K secret -R -E Hermione newlog"
+    }
+  ]
+}

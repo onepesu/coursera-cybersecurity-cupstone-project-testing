@@ -1,0 +1,75 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -G GERDA -A log"
+    },
+    {
+      "input": "logappend -K secret -T 2 -G GERDA -A -R 99 log"
+    },
+    {
+      "input": "logappend -K secret -T 3 -G GERDA -L -R 99 log"
+    },
+    {
+      "input": "logappend -K secret -T 4 -G GERDA -A -R 22 log"
+    },
+    {
+      "input": "logappend -K secret -T 5 -G GERDA -L -R 22 log"
+    },
+    {
+      "input": "logappend -K secret -T 6 -G GERDA -L log"
+    },
+    {
+      "input": "logappend -K secret -T 7 -G GERDA -A log"
+    },
+    {
+      "input": "logappend -K secret -T 8 -G GERDA -A -R 77 log"
+    },
+    {
+      "input": "logappend -K secret -T 1 -E RICKY -A log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -K secret -T 2 -E RICKY -A -R 22 log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -K secret -T 3 -E RICKY -L -R 22 log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -K secret -T 4 -E RICKY -A -R 129 log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -K secret -T 5 -E RICKY -L -R 129 log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -K secret -T 6 -E RICKY -L log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -K secret -T 7 -E RICKY -A log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -K secret -T 8 -E RICKY -A -R 77 log",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K secret -R -E RICKY log"
+    },
+    {
+      "input": "logread -K secret -R -G GERDA log",
+      "output": "99,22,77"
+    }
+  ]
+}

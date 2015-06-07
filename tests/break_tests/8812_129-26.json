@@ -1,0 +1,81 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -A -E EmpA LOGREADOPS"
+    },
+    {
+      "input": "logappend -K secret -T 2 -A -R 10 -E EmpA LOGREADOPS"
+    },
+    {
+      "input": "logappend -K secret -T 3 -L -R 10 -E EmpA LOGREADOPS"
+    },
+    {
+      "input": "logappend -K secret -T 4 -A -R 4 -E EmpA LOGREADOPS"
+    },
+    {
+      "input": "logappend -K secret -T 5 -A -E EmpB LOGREADOPS"
+    },
+    {
+      "input": "logappend -K secret -T 6 -A -R 4 -E EmpB LOGREADOPS"
+    },
+    {
+      "input": "logappend -K secret -T 7 -L -R 4 -E EmpA LOGREADOPS"
+    },
+    {
+      "input": "logappend -K secret -T 8 -A -R 99 -E EmpA LOGREADOPS"
+    },
+    {
+      "input": "logappend -K secret -T 9 -A -G GstA LOGREADOPS"
+    },
+    {
+      "input": "logappend -K secret -T 10 -A -R 99 -G GstA LOGREADOPS"
+    },
+    {
+      "input": "logappend -K secret -T 11 -A -G GstB LOGREADOPS"
+    },
+    {
+      "input": "logappend -K secret -T 12 -L -R 99 -G GstA LOGREADOPS"
+    },
+    {
+      "input": "logappend -K secret -T 13 -A -R 10 -G GstA LOGREADOPS"
+    },
+    {
+      "input": "logappend -K secret -T 14 -A -G GstC LOGREADOPS"
+    },
+    {
+      "input": "logread -K secret -I -E EmpA LOGREADOPS",
+      "output": "4,10,99"
+    },
+    {
+      "input": "logread -K secret -I -E EmpB LOGREADOPS",
+      "output": "4"
+    },
+    {
+      "input": "logread -K secret -I -G GstA LOGREADOPS",
+      "output": "10,99"
+    },
+    {
+      "input": "logread -K secret -I -G GstB LOGREADOPS"
+    },
+    {
+      "input": "logread -K secret -I -G GstC LOGREADOPS"
+    },
+    {
+      "input": "logread -K secret -I -G GstZ LOGREADOPS"
+    },
+    {
+      "input": "logread -K secret -I -E EmpA -E EmpB LOGREADOPS",
+      "output": "4"
+    },
+    {
+      "input": "logread -K secret -I -E EmpA -G GstA LOGREADOPS",
+      "output": "99"
+    },
+    {
+      "input": "logread -K secret -I -G GstB -E EmpA LOGREADOPS"
+    },
+    {
+      "input": "logread -K secret -I -E EmpA -G GstW LOGREADOPS"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K 1 -T 2 -A -G ann log@"
+    },
+    {
+      "input": "logread -K 1 -S ann log@",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}

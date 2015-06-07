@@ -1,0 +1,15 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -E Employee -A C1CE"
+    },
+    {
+      "input": "logappend -K secret -T 2 -E Employee -A -R 1 C1CE"
+    },
+    {
+      "input": "logappend -K secret -T 3 -E Employee -L -R 2 C1CE",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}
