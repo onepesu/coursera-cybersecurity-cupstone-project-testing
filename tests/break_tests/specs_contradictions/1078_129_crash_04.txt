@@ -1,0 +1,1 @@
+a batch command in a batch file. We print invalid once as we very well should. In case there was another command afterr that we should print something for that command. Invalid should be printed once
