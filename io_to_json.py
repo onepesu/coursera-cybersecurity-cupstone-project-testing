@@ -5,7 +5,7 @@ import os.path
 import settings
 
 
-def _translate(input_, output, open_file):
+def _translate(input_, output, batch, open_file):
     def put(string, indentation=0, end='\n'):
         print('  '*indentation + string, end=end, file=open_file)
 
@@ -32,13 +32,17 @@ def _translate(input_, output, open_file):
         put('}', 2, '')
 
     put('')
-    put(']', 1)
+    if batch is None:
+        put(']', 1)
+    else:
+        put('],', 1)
+        put('"batch": "{batch}"'.format(batch=batch), 1)
     put('}')
 
 
-def translate(input_, output, filename=sys.stdout):
+def translate(input_, output, batch=None, filename=sys.stdout):
     if isinstance(filename, file):
-        _translate(input_, output, filename)
+        _translate(input_, output, batch, filename)
     else:
         with open(os.path.join(settings.TEST_FOLDER, filename), 'w') as open_file:
-            _translate(input_, output, open_file)
+            _translate(input_, output, batch, open_file)
