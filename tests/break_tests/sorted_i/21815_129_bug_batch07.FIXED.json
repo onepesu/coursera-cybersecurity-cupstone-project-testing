@@ -1,7 +1,7 @@
 {
   "tests": [
     {
-      "input": "logappend -B batch",
+      "input": "logappend -B batch"
     },
     {
       "input": "logread -K secret -I -E Jill -E Bob log",
