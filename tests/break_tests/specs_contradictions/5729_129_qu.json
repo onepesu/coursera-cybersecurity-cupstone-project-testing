@@ -1,7 +1,0 @@
-{
-  "tests": [
-    {
-      "input": "logappend -T 1 -K secret -A -E Fred "log 47""
-    }
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "tests": [
-    {
-      "input": "logappend -T 3 -K ! -A -G miro -K 1 logs",
-      "output": "invalid\n",
-      "exit": 255
-    }
-  ]
-}
