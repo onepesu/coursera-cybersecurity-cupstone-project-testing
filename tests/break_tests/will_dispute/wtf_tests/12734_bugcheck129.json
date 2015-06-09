@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "input": "logappend -K secret -T 1 -G guest -A log1"
+    },
+    {
+      "input": "logappend -B log1",
+      "output": "invalid\ninvalid\n",
+      "exit": 255
+    }
+  ]
+}

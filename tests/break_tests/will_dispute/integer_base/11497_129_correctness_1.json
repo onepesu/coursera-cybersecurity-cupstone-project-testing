@@ -1,0 +1,15 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 0x0a -K UHWJNOJD -E JOSHUA -A WBOVNUXM"
+    },
+    {
+      "input": "logappend -T 0x0F -K UHWJNOJD -E JOSHUA -A -R 0xD1af WBOVNUXM"
+    },
+    {
+      "input": "logread logread -K MVWSEOWP -I -E JAMES HNRAETHN",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}
