@@ -1,0 +1,2 @@
+Invalid log entry: attempt to exit a different room than the current one, expecting an error.
+Details: Expected 'invalid' got '' on ./logappend -T 3 -K secret -E Fred -L -R 2 log1 (error? <nil>)

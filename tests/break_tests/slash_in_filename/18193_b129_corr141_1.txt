@@ -1,0 +1,1 @@
+Invalid logfile results in 255, 'integrity violation' (logread spec)

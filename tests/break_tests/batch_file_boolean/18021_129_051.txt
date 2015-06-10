@@ -1,0 +1,1 @@
+Batch called within batch file.  Same name given for batch so batch exists.  Should print invalid for that line and continue, exiting (0) for the original valid batch call and logread should only see the two valid lines.

@@ -1,0 +1,1 @@
+If 'BILL' was not in any of the rooms then the output of -R should be empty

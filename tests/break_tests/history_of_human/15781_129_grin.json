@@ -1,0 +1,10 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 1 -K SECRET -E GLAYDS -A RSRYYXDZ"
+    },
+    {
+      "input": "logread -K SECRET -R -E MIKE RSRYYXDZ"
+    }
+  ]
+}

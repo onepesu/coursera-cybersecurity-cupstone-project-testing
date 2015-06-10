@@ -1,0 +1,11 @@
+-T 1 -K secret -A -E Bill log1
+-T 2 -K secret -A -E Bill -R 1 log1
+-T 3 -K wrong -E Bill -L -R 1 log1
+-T 3 -K secret -E Bill -L -R 1 log1
+-T 1 -K secret2 -A -E Bill log2
+-T 5 -K secret -L -E Bill log1
+-T 2 -K secret2 -A -E Bill -R 2 log2
+-T 12 -K secret -A -E Bill log1
+-T 13 -K secret -A -E Bill -R 2 log1
+-T 3 -K secret -L -R 2 -E Bill log2
+-T 5 -K secret2 -L -R 2 -E Bill log2

@@ -1,0 +1,1 @@
+Employee named JOSHUA is not the same as the guest named JOSHUA. (logappend spec, -E/-G parameter.)

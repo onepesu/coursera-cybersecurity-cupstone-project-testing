@@ -1,0 +1,1 @@
+An employee must be in the gallery before he can enter a room. logappend spec, -A parameter.

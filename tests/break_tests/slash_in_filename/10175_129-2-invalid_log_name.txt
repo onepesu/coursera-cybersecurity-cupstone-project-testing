@@ -1,0 +1,3 @@
+a logname given with a relative path is not accepted
+got invalid expected 
+got 255 expected 0

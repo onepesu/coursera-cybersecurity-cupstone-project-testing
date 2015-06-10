@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\ninvalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K sec -S batch_invalid_name.log",
+      "output": "\n\n"
+    }
+  ],
+  "batch": "LVQgMSAtSyBzZWMgLUUgVGgxc0lzTjB0LUEtVmFsaWQtTjRtMyAtQSBiYXRjaF9pbnZhbGlkX25hbWUubG9nCg=="
+}

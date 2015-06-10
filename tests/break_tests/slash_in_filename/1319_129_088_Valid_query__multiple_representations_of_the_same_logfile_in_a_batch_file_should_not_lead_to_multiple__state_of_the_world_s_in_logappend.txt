@@ -1,0 +1,2 @@
+Valid query: multiple representations of the same logfile in a batch file should not lead to multiple 'state of the world's in logappend.
+Details: Expected '' got 'invalid' on ./logappend -B batch2 (error? <nil>)

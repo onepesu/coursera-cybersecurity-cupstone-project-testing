@@ -1,0 +1,1 @@
+Person can leave a Room different than the one they are in.

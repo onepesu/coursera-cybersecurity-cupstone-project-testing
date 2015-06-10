@@ -1,0 +1,19 @@
+
+[ "logappend -T 1 -K secret -A -E Fred log30-log31 ]
+
+should printout:
+
+[
+    {
+        "exit": 0,
+        "output": ""
+    }
+]
+
+instead we get:
+
+ubuntu@bibivm:~/breakit/129/code/build$ ./logappend -T 1 -K secret -A -E Fred  log30-log31
+invalid
+ubuntu@bibivm:~/breakit/129/code/build$
+
+

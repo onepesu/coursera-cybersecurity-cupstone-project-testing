@@ -1,0 +1,15 @@
+-K secret -T 01 -A -G John ./log1
+-K secret -T 01 -A -E Jacey log1
+-K   secret -T 02 -A -A -A -A -E Jacey ./././././log1 -A -A -A -A -A
+-K secret -T 03 -A -G Jim .///.///.///.///./log1
+-K secret -T 02 -A -A -A -R 7 -G Jim -A -A log1
+-K    secret -T 000000000000000000000000000006 -A -G Jane log1
+-K secret -T 07 -A -R                   0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001 -G John log1
+-K secret -T 08 -A -R 0000000000000000000000000001 -G Jane ./log1
+-K secret -T 0000000000000000000000000000000000009 -L -R 1 -G Jane ./log1
+-K     secret -T 14 -L                     -L -L                                      -G Jane log1
+-K secret -T 15 -A -R 1 -E Jacey log1
+-K secret -T 18 -A -R 3 -G Jim log1
+-K secret -T 19 -A -R 3 -G Jim log1
+-K secret -T 20 -A -L -R 3 -G Jim log1
+-K secret -T 25 -A -G Jil -B batch1 log1

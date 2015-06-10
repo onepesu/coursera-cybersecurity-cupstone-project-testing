@@ -1,0 +1,2 @@
+Batch bug: Batch uses different key on a line.  Should not process that line, but should continue with remainder.  Expected output is 'Name
+bName'

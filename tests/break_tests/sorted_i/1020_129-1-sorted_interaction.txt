@@ -1,0 +1,3 @@
+from the spec logread -I :
+Room IDs should be printed in ascending numerical order.
+got 1,11,2 expected 1,2,11

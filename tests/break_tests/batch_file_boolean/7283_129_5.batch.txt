@@ -1,0 +1,3 @@
+-B batch
+-T 1 -K secret -G goo -A thelog
+-T 2 -K secret -G goo -A -R 1 thelog

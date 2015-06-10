@@ -1,0 +1,1 @@
+Bug: Person attempted to enter directly to a room after leaving the gallery. Must enter the gallery again first. Expected output is 'invalid'

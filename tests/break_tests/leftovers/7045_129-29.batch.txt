@@ -1,0 +1,22 @@
+-K secret -T 1 -A -E AAA log1
+-K secret -T 2 -A -R 7 -G BBB log1
+-K secret -T 1 -A -G BBB log2
+-K secret -T 3 -A -R 5 -E AAA log1
+-K secret -T 2 -A -R 64 -G BBB log2
+-K secret -T 1 -A -R 10 -E AAA log1
+-K secret -T 4 -A -G BBB log1
+-K other -T 1 -A -G BBB log3
+-K secret -T 5 -A -R 64 -G BBB log1
+-K secret -T 3 -L -R 64 -G BBB log2
+-K secret -T 4 -A -R 99 -G BBB log2
+-K wrong1 -T 6 -L -R 64 -G BBB log1
+-K secret -T 5 -A -G AAA log2
+-K secret -T 7 -L -R 5 -E AAA log1
+-K secret -T 8 -A -R 64 -E AAA log1
+-K secret -T 6 -L -R 99 -G BBB log2
+-K other -T 2 -A -R 64 -G BBB log3
+-K secret -T 9 -L -R 64 -G BBB log1
+-K badtok -T 10 -A -E CCC log1
+-K secret -T 7 -A -G BBB log2
+-K secret -T 11 -L -G BBB log1
+-K secret -T 12 -A -G BBB log1

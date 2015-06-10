@@ -1,0 +1,93 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 1 -K secret -E Ibn -A log1"
+    },
+    {
+      "input": "logappend -T 3 -K secret -E Ibn -R 5 -A log1"
+    },
+    {
+      "input": "logappend -T 4 -K secret -E Ibn -R 5 -L log1"
+    },
+    {
+      "input": "logappend -T 5 -K secret -E Ibn -R 2 -A log1"
+    },
+    {
+      "input": "logappend -T 6 -K secret -G Fred -A log1"
+    },
+    {
+      "input": "logappend -T 7 -K secret -G Fred -A -R 2 log1"
+    },
+    {
+      "input": "logappend -T 9 -K secret -G Fred -A -R 3 log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 12 -K secret -E Modou -A log1"
+    },
+    {
+      "input": "logappend -T 13 -K secret -E Modou -A -R 6 log1"
+    },
+    {
+      "input": "logappend -T 14 -K secret -E Modou -L -R 6 log1"
+    },
+    {
+      "input": "logappend -T 15 -K secret -E Modou -A -R 1 log1"
+    },
+    {
+      "input": "logappend -T 16 -K secret -E Modou -L -R 1 log1"
+    },
+    {
+      "input": "logappend -T 17 -K secret -E Modou -A -R 2 log1"
+    },
+    {
+      "input": "logappend -T 18 -K secret -G Fred -L -R 2 log1"
+    },
+    {
+      "input": "logappend -T 19 -K secret -E Modou -L -R 2 log1"
+    },
+    {
+      "input": "logappend -T 20 -K secret -G Fred -A -R 8 log1"
+    },
+    {
+      "input": "logappend -T 21 -K secret -E Modou -A -R 8 log1"
+    },
+    {
+      "input": "logappend -T 22 -K secret -G Fred -L -R 8 log1"
+    },
+    {
+      "input": "logappend -T 23 -K secret -G Fred -L log1"
+    },
+    {
+      "input": "logappend -T 24 -K secret -G Abou -A log1"
+    },
+    {
+      "input": "logappend -T 25 -K secret -G Abou -R 5 -A log1"
+    },
+    {
+      "input": "logappend -T 26 -K secret -G Abou -R 5 -L log1"
+    },
+    {
+      "input": "logappend -T 27 -K secret -G Abou -R 2 -A log1"
+    },
+    {
+      "input": "logappend -T 28 -K secret -G Abou -R 2 -L log1"
+    },
+    {
+      "input": "logappend -T 29 -K secret -G Abou -R 1 -A log1"
+    },
+    {
+      "input": "logappend -T 30 -K secret -E Hector -A log1"
+    },
+    {
+      "input": "logappend -T 31 -K secret -E Ibn -R 2 -L log1"
+    },
+    {
+      "input": "logappend -T 32 -K secret -E Ibn -R 2 -A log1"
+    },
+    {
+      "input": "logread -K secret -R -E Coucou log1"
+    }
+  ]
+}

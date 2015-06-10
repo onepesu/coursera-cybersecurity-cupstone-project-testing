@@ -1,0 +1,1 @@
+Batch bug: All lines are invalid.  Should print invalid for each line and exit (0).

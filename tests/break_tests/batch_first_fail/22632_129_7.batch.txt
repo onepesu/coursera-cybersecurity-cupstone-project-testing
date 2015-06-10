@@ -1,0 +1,2 @@
+-K secret -T 1 -G GERDA -A batch
+-T 2 -K secret -G GEORGE -A LOGFILE

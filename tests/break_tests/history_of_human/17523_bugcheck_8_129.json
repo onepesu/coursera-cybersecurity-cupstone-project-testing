@@ -1,0 +1,199 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 1 -K pw1 -A -E Fred log1"
+    },
+    {
+      "input": "logappend -T 2 -K pw1 -A -G Jill log1"
+    },
+    {
+      "input": "logappend -T 3 -K pw1 -A -E Fred -R 1 log1"
+    },
+    {
+      "input": "logappend -T 4 -K pw1 -A -G Jill -R 1 log1"
+    },
+    {
+      "input": "logappend -T 5 -K pw1 -L -E Fred -R 1 log1"
+    },
+    {
+      "input": "logappend -T 1 -K pw1 -A -E Fred log2"
+    },
+    {
+      "input": "logappend -T 2 -K pw1 -A -G Jill log2"
+    },
+    {
+      "input": "logappend -T 3 -K pw1 -A -E Fred -R 1 log2"
+    },
+    {
+      "input": "logappend -T 4 -K pw1 -A -G Jill -R 1 log2"
+    },
+    {
+      "input": "logappend -T 5 -K pw1 -L -E Fred -R 1 log2"
+    },
+    {
+      "input": "logappend -T 6 -K pw1 -A -E Fred -R 2 log2"
+    },
+    {
+      "input": "logappend -T 7 -K pw1 -L -E Fred -R 2 log2"
+    },
+    {
+      "input": "logappend -T 8 -K pw1 -A -E Fred -R 3 log2"
+    },
+    {
+      "input": "logappend -T 9 -K pw1 -L -E Fred -R 3 log2"
+    },
+    {
+      "input": "logappend -T 10 -K pw1 -A -E FreD log2"
+    },
+    {
+      "input": "logappend -T 11 -K pw1 -A -E FRED log2"
+    },
+    {
+      "input": "logappend -T 12 -K pw1 -A -E FreD -R 2 log2"
+    },
+    {
+      "input": "logappend -T 13 -K pw1 -A -E FRED -R 2 log2"
+    },
+    {
+      "input": "logappend -T 14 -K pw1 -L -E FRED -R 2 log2"
+    },
+    {
+      "input": "logappend -T 4 -K pw1 -A -G GXXX log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 5 -K pw2 -A -G GXXX log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 6 -K pw1 -A -G gxxx log1"
+    },
+    {
+      "input": "logappend -T 6 -K pw1 -A -E FRED log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 7 -K pw1 -L -E FRED log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 8 -K pw1 -A -E FRED log1"
+    },
+    {
+      "input": "logappend -T 9 -K pw1 -L -E FRED log1"
+    },
+    {
+      "input": "logappend -T 1 -K pw1 -A -E FRED log10"
+    },
+    {
+      "input": "logappend -T 2 -K pw1 -L -E FRED log10"
+    },
+    {
+      "input": "logappend -T 2 -K pw1 -A -E FRED log10",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 4 -K pw1 -L -E FRED log10",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 10 -K pw2 -A -E FRED log100"
+    },
+    {
+      "input": "logappend -T 20 -K pw2 -L -E FRED log100"
+    },
+    {
+      "input": "logappend -T 30 -K pw2 -A -E FRED log100"
+    },
+    {
+      "input": "logappend -T 40 -K pw1 -L -E FRED log100",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 16 -K pw1 -A -E Fred -R 0002 log1"
+    },
+    {
+      "input": "logappend -T 17 -K pw1 -L -E Fred -R 2 log1"
+    },
+    {
+      "input": "logappend -T 18 -K pw1 -A -E Fred -R 003 log1"
+    },
+    {
+      "input": "logappend -T 19 -K pw1 -L -E Fred -R 03 log1"
+    },
+    {
+      "input": "logappend -T 20 -K pw1 -L -E Fred log1"
+    },
+    {
+      "input": "logread -K pw1 -S log1",
+      "output": "\nJill,gxxx\n\n1:Jill"
+    },
+    {
+      "input": "logread -K pw1 -S log2",
+      "output": "FRED,FreD,Fred\nJill\n\n1:Jill\n2:FreD"
+    },
+    {
+      "input": "logread -K pw1 -R -E Fred log2",
+      "output": "1,2,3"
+    },
+    {
+      "input": "logread -K pw1 -R -E Fred log1",
+      "output": "1,2,3"
+    },
+    {
+      "input": "logread -K pw1 -T -E Fred log1",
+      "output": "19\n"
+    },
+    {
+      "input": "logread -K pw1 -T -E Fred log2",
+      "output": "13\n"
+    },
+    {
+      "input": "logread -K pw1 -R -E FrSS log1"
+    },
+    {
+      "input": "logread -K pw1 -R -E FrSS log2"
+    },
+    {
+      "input": "logread -K pw1 -T -E FrXX log1",
+      "output": "0\n"
+    },
+    {
+      "input": "logread -K pw1 -T -E FrXX log2",
+      "output": "0\n"
+    },
+    {
+      "input": "logread -K pw1 -I -E Fred log1",
+      "output": "1,2,3"
+    },
+    {
+      "input": "logread -K pw1 -I -E FrXX log2"
+    },
+    {
+      "input": "logread -K pw2 -I -E FRED log100"
+    },
+    {
+      "input": "logread -K pw2 -R -E FRED log100"
+    },
+    {
+      "input": "logread -K pw2 -T -E FRED log100",
+      "output": "10\n"
+    },
+    {
+      "input": "logread -K pw2 -S log100",
+      "output": "FRED\n\n"
+    },
+    {
+      "input": "logread -K pw1 -S log100",
+      "output": "integrity violation\n",
+      "exit": 255
+    }
+  ]
+}

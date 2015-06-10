@@ -1,0 +1,1 @@
+An employee is allowed to leave a room, even though he is not in it

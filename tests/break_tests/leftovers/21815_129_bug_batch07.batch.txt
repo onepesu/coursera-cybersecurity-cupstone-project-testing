@@ -1,0 +1,14 @@
+-K secret -T 6 -A -E Jill log
+-K secret -T 7 -A -E Jill -R 99 log
+-K secret -T 9 -A -E Bob log
+-K secret -T 10 -A -E Bob -R 99 log
+-K secret -T 17 -L -E Jill -R 99 log
+-K secret -T 20 -L -E Bob -R 99 log
+-K secret -T 30 -A -E Bob -R 10 log
+-K secret -T 40 -A -E Jill -R 7777 log
+-K secret -T 50 -L -E Bob -R 10 log
+-K secret -T 60 -A -E Bob -R 7777 log
+-K secret -T 70 -L -E Bob -R 7777 log
+-K secret -T 80 -A -E Bob -R 99 log
+-K secret -T 90 -L -E Jill -R 7777 log
+-K secret -T 700 -A -E Jill -R 99 log

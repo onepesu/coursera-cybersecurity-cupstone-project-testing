@@ -1,0 +1,1 @@
+in a batch mode, if in the batch file are present two invalid lines the logappend crash (None types not checked).

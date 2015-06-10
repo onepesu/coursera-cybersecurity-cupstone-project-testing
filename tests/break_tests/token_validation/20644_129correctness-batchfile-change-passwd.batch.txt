@@ -1,0 +1,2 @@
+-T 1 -K AYYAIVLS -G LARRAINE -A testlog
+-T 2 -K YOYO -G LARRAINE -A -R 16 testlog

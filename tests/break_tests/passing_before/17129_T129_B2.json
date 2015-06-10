@@ -1,9 +1,0 @@
-{
-  "tests": [
-    {
-      "input": "logappend -B T129_Batch",
-      "output": "invalid\n",
-      "exit": 255
-    }
-  ]
-}

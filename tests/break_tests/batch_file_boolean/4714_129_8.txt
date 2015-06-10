@@ -1,0 +1,1 @@
+Option -B cannot itself appear in one of a batch file command lines.

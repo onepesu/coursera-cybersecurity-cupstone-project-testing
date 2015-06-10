@@ -1,0 +1,2 @@
+Batch bug: Logs are allowed to have periods and slashes to reference directories. Thus, './' in front of a log should be interpreted as the same log.  This works correctly in this team's code for multiple calls to logappend but fails when given in a batch. Expected output is Name,aName
+bName. 

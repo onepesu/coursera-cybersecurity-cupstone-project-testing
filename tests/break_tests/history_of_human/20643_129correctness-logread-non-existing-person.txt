@@ -1,0 +1,1 @@
+Logread fails to deal with the case where a person is not on the log.

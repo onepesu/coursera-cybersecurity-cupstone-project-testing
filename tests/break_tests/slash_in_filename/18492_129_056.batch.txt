@@ -1,0 +1,3 @@
+-K secret -T 1 -A -E Name ./ps_ref_dir_batch
+-K secret -T 2 -A -E aName ps_ref_dir_batch
+-K secret -T 3 -A -G bName ./ps_ref_dir_batch

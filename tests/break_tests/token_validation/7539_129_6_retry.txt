@@ -1,0 +1,19 @@
+{
+    "target_team": 129,
+    "type": "correctness",
+    "commands": [
+    {
+        "program": "logappend",
+        "args": ["-K", "secret", "-T" , "1", "-E", "FOO", "-A" , "-S", "thelog"]
+    },
+    {
+        "program": "logappend",
+        "args": ["-B", "batch"]
+    },
+    {
+        "program": "logread",
+        "args": ["-K", "secret", "-S", "thelog"]
+    }
+    ],
+        "batch": "LVQgMiAtSyBzZWNyZXQgLUcgR0VPUkdFIC1BIHRoZWxvZwotVCAzIC1LIHNlY3JldCAtRyBHRU9SR0UgLUEgLVIgMSB0aGVsb2cKLVQgNCAtSyB3cm9uZyAtRyBnb28gLUEgb3RoZXJsb2cK"
+}

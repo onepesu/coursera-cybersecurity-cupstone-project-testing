@@ -1,7 +1,0 @@
-{
-  "tests": [
-    {
-      "input": "logappend -T 1 -K UBSVZGIX -E Steve -A /var/tmp/testlogASSDFSDF"
-    }
-  ]
-}

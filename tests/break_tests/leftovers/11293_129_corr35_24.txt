@@ -1,0 +1,1 @@
+Batch files are not permitted to contain -B. (logappend spec, Return values and error conditions.)

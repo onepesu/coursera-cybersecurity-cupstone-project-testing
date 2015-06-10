@@ -1,0 +1,1 @@
+When employees and guests have same name they should still be treated differently when querying the gallery

@@ -1,0 +1,56 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 1 -K MVWSEOWP -E JAMES -A HNRAETHN"
+    },
+    {
+      "input": "logappend -T 2 -K MVWSEOWP -E JAMES -A -R 2 HNRAETHN"
+    },
+    {
+      "input": "logappend -T 3 -K MVWSEOWP -G SARAH -A HNRAETHN"
+    },
+    {
+      "input": "logappend -T 4 -K MVWSEOWP -G SHENITA -A HNRAETHN"
+    },
+    {
+      "input": "logappend -T 5 -K MVWSEOWP -G SARAH -A -R 2 HNRAETHN"
+    },
+    {
+      "input": "logappend -T 6 -K MVWSEOWP -E KATHY -A HNRAETHN"
+    },
+    {
+      "input": "logappend -T 7 -K MVWSEOWP -G WARD -A HNRAETHN"
+    },
+    {
+      "input": "logappend -T 8 -K MVWSEOWP -E KATHY -A -R 2 HNRAETHN"
+    },
+    {
+      "input": "logappend -T 9 -K MVWSEOWP -E JAMES -L -R 2 HNRAETHN"
+    },
+    {
+      "input": "logappend -T 10 -K MVWSEOWP -E JAMES -A -R 11 HNRAETHN"
+    },
+    {
+      "input": "logappend -T 11 -K MVWSEOWP -E JAMES -L -R 11 HNRAETHN"
+    },
+    {
+      "input": "logappend -T 12 -K MVWSEOWP -E JAMES -A -R 7 HNRAETHN"
+    },
+    {
+      "input": "logappend -T 13 -K MVWSEOWP -E KATHY -L -R 2 HNRAETHN"
+    },
+    {
+      "input": "logappend -T 14 -K MVWSEOWP -E JAMES -L -R 7 HNRAETHN"
+    },
+    {
+      "input": "logappend -T 15 -K MVWSEOWP -E JAMES -L HNRAETHN"
+    },
+    {
+      "input": "logappend -T 16 -K MVWSEOWP -E KATHY -A -R 7 HNRAETHN"
+    },
+    {
+      "input": "logread -K MVWSEOWP -I -E JAMES HNRAETHN",
+      "output": "2,7,11"
+    }
+  ]
+}

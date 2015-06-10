@@ -1,0 +1,1 @@
+log parameter is "the path to the file containing the event log. The log's filename may be specified with a string of alphanumeric characters (including underscores and periods). Slashes and periods may be used to reference log files in other directories" see https://www.builditbreakit.org/static/doc/spring2015/spec/LOGAPPEND.html

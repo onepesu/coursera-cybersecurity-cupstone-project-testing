@@ -1,0 +1,3 @@
+Bug description:
+
+Left a room while being in another room. According to the specs, "No employee or guest should leave a room without entering it."

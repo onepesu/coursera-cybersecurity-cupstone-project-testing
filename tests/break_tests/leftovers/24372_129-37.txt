@@ -1,0 +1,1 @@
+logappend in the batch file + logread -S, multiple -A and missing parameters, input validation problem and maybe unexpected exit

@@ -1,0 +1,2 @@
+-K key -T 1 -A -E xpto log
+-B batch

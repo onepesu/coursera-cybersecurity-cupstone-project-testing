@@ -1,0 +1,1 @@
+Output should be invalid, logread results do not match this

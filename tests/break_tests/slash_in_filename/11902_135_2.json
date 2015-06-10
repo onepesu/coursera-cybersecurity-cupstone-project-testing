@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 1 -K SECRET -E MAURO -A ./log129"
+    },
+    {
+      "input": "logappend -T 2 -K SECRET -G VANESSA -A ./log129"
+    },
+    {
+      "input": "logappend -T 9 -K SECRET -E MAURO -L ./log129"
+    },
+    {
+      "input": "logappend -T 9 -K SECRET -G VANESSA -L ./log129",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K SECRET -S ./log129",
+      "output": "\nVANESSA\n"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Guest leaves another room, should not accept

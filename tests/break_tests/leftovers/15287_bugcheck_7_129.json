@@ -1,0 +1,243 @@
+{
+  "tests": [
+    {
+      "input": "logappend ",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend     ",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend \t",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend \*",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend \&",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend \#",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend \:",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend \$1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend \'",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 5 -K pw1 -A -E emp log1"
+    },
+    {
+      "input": "logappend -T 5 -T xx -T -1.1 -T -100 -K pw1 -A -E emp log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 6 -K p&&%**%$w1 -A -E emp log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 7 -K pw1 -A -E emp last log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T
+ 8 -K\& pw1 -A -E\' emp last log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend \'R^&$^$$^#^#^*^(&()&)&(%&*$^$^&$^#^&#&$*(^(^&)&)&(%&$^^#*&)_\'",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -t 9 -k pw1 -a -e emp log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 10 11 -K pw1 -A -E emp log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T -T 12 -K pw1 -A -E emp log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend T-T 13 -K pw1 -A -E emp log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend --T 5 -K pw1 -A -E emp log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 15 -K pw1 -A -E emp -R 101  12 log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T  -K pw1 -A -E emp -R 101 log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 25 -K pw1 -A -E emp2 -R 102 log1 log2",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 25 -K pw1 -A -E emp2 -R 102 log1 log2 log3 log4 log5 log6",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 5 -K pw1 -A -E empxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx log1",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 1 -K pw2 -A -E emp log1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    },
+    {
+      "input": "logappend -T 1 -K pw1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -A -E emp log3"
+    },
+    {
+      "input": "logappend -T 1 -K pw0 -A -E emp2 -E emp2 -E emp3 -E emp4 -E emp5 -E emp6 -E \' -E $^$^$^ log10",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -B",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend - B",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend - -B",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -B  ",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -B \n",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -B Abc%%%% ",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -B abc.exe",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -B abc.bat",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -B abc ",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logappend -T 1 -K pw22 -A -E emp log22"
+    },
+    {
+      "input": "logappend -T 2 -K pw22 -A -G emp log22"
+    },
+    {
+      "input": "logread -K \nabc## -S log22",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread - -K pw22 -S log22",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread - - - - - - -K pw22 -S log22",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K pw22 -T -X log22",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K pw22 -I -X log22",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K pw22 -T -I log22",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K pw22 -T -G \n log22",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K pw22 -R -G abc log22"
+    },
+    {
+      "input": "logread -K pw22 -R -G \n log22",
+      "output": "invalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K pw22 -R -G aa bb log22",
+      "output": "invalid\n",
+      "exit": 255
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+-T 1 -K token -G perry -A log
+-T 2 -K token -G kaz -A log
+-T 3 -K newtoken -G nick -A newlog
+-T 4 -K newtoken -G lani -A newlog

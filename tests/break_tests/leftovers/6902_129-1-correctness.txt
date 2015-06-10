@@ -1,0 +1,3 @@
+Slashes and periods may be used to reference log files in other directories.
+
+here "./logfile" is rejected as invalid

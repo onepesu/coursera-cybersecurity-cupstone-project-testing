@@ -1,0 +1,1 @@
+Program should return invalid 255 for entry into room after leaving gallery, but accepts input.

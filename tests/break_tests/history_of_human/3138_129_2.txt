@@ -1,0 +1,1 @@
+If logread is given an employee or guest name that does not exist in the log, it should print nothing about that employee (which may result in empty output). see https://www.builditbreakit.org/static/doc/spring2015/spec/LOGREAD.html

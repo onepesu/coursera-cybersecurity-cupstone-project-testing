@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\n"
+    },
+    {
+      "input": "logread -K key -S log",
+      "output": "\njoe\n"
+    }
+  ],
+  "batch": "LUsga2V5IC1UIDEgLUUgYW5hIC1BIGxvZw0KLUsgd3JvbmdrZXkgLVQgMiAtRSByaWNreSAtQSBsb2cNCi1LIGtleSAtVCAzIC1HIGpvZSAtQSBsb2c="
+}

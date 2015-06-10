@@ -1,0 +1,1 @@
+Logappend bug: A person can not leave a room she hasn't entered and needs to arrive to a room before she leaves it.  Expected output is 'invalid'.

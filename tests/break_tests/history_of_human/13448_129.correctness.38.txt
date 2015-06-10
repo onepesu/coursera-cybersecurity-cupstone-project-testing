@@ -1,0 +1,1 @@
+Program crash when doing logread with -R and the name of a person who never entered the gallery. This is incorrect behaviour.

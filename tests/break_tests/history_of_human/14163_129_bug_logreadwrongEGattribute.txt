@@ -1,0 +1,1 @@
+readlog with wrong attribute -E vs. -G. Should return 0 or 255, but crashes and returns 1

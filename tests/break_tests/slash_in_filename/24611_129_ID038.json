@@ -1,0 +1,11 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 1 -K sec -E Bob -A ../relativepathlog"
+    },
+    {
+      "input": "logread -K sec -S ../relativepathlog",
+      "output": "Bob\n\n"
+    }
+  ]
+}

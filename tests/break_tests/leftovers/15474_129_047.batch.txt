@@ -1,0 +1,3 @@
+-K secret -T 1 -L batch_all_invalid2
+-T 2 -A batch_all_invalid
+-K secret -G bName batch_all_invalid2

@@ -1,0 +1,16 @@
+logappend -B BatchDualLog.batch the presence of 2 differents log names in teh batch has been confirmed in the sicussion forum
+got  expected invalidinvalid
+got panic:Can'tuseadifferentfileinabatchgoroutine1[running]:runtime.panic(0x810dde0,0x18500140) /usr/lib/go/src/pkg/runtime/panic.c:266+0xaccommon.Die(0xb7792740,0x18500140)   /home/ubuntu/154/code/src/common/error.go:29+0x4dmain.main2()   /home/ubuntu/154/code/src/logappend/logappend.go:163+0x3f3main.main()   /home/ubuntu/154/code/src/logappend/logappend.go:199+0x21 expected 
+got 2 expected 0
+batch : 
+-T 1 -K secret -A -E Bill log1
+-T 2 -K secret -A -E Bill -R 1 log1
+-T 3 -K wrong -E Bill -L -R 1 log1
+-T 3 -K secret -E Bill -L -R 1 log1
+-T 1 -K secret2 -A -E Bill log2
+-T 5 -K secret -L -E Bill log1
+-T 2 -K secret2 -A -E Bill -R 2 log2
+-T 12 -K secret -A -E Bill log1
+-T 13 -K secret -A -E Bill -R 2 log1
+-T 3 -K secret -L -R 2 -E Bill log2
+-T 5 -K secret2 -L -R 2 -E Bill log2

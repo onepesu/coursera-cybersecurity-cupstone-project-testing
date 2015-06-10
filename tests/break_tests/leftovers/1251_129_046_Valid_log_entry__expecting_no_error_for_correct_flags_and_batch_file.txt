@@ -1,0 +1,16 @@
+Valid log entry: expecting no error for correct flags and batch file.
+Details: Expected 'invalid
+invalid
+invalid
+invalid
+invalid' got 'invalid
+invalid
+invalid
+invalid
+invalid
+invalid
+invalid
+invalid
+invalid
+invalid
+invalid' on ./logappend -B batch1 (

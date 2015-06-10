@@ -1,0 +1,1 @@
+Incorrect output when -B appears inside the batch file.

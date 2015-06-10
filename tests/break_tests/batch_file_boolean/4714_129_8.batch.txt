@@ -1,0 +1,2 @@
+-K NOTASECRET -T 1 -G BUZZ -A log8
+-B batch2

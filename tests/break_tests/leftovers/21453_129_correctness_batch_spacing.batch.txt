@@ -1,0 +1,2 @@
+-K    SECRET -T     1 -E GERDA -A LOGFILE
+-K    SECRET -T     2 -E GERDA       -A 3 LOGFILE

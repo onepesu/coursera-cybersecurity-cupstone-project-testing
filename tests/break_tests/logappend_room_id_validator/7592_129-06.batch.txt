@@ -1,0 +1,5 @@
+-T 1 -K secret -G GIGGIO -A TESTLOG1
+-T 2 -K secret -G GIGGIO -A -R 1 TESTLOG1
+-T 3 -K secret -G GIGGIO -L -R 7 TESTLOG1
+-T 4 -K secret -G PIPPO -A TESTLOG1
+-T 5 -K secret -G PIPPO -A -R 1 TESTLOG1

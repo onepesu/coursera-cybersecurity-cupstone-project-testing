@@ -1,0 +1,13 @@
+{
+  "target_team": 129,
+  "type": "correctness",
+  "commands": [
+    {
+      "program": "logappend",
+      "args": ["-B", "batch"]
+    }
+  ],
+  "batch": "LUsgMSAtVCAxIC1BIC1HIGd1ZXN0IC9kZXYvbnVsbA=="
+}
+
+returns invalid code

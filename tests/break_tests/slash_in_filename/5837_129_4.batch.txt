@@ -1,0 +1,3 @@
+-T 1 -K secret -E ALEX -A LOGFILE
+-T 2 -K secret -G GEO -A LOGFILE
+-T 3 -K secret -G GEO -A -R 1 ./LOGFILE

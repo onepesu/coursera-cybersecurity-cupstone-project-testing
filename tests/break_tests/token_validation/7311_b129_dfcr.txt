@@ -1,0 +1,20 @@
+
+
+different tokens within batch file are accepted for one log file
+
+ubuntu@bibivm:~/breakit/129/code/build$ ./logappend -B ~/breakit/batch7
+Traceback (most recent call last):
+  File "./logappend", line 101, in <module>
+    raise ValidationError('wrong token')
+log_libraries.utils.ValidationError: wrong token
+ubuntu@bibivm:~/breakit/129/code/build$ ls
+log102  log125  log23  logappend      logread
+log115  log2    log3   log_libraries  Makefile
+ubuntu@bibivm:~/breakit/129/code/build$ ./logappend -B ~/breakit/batch7
+Traceback (most recent call last):
+  File "./logappend", line 101, in <module>
+    raise ValidationError('wrong token')
+log_libraries.utils.ValidationError: wrong token
+ubuntu@bibivm:~/breakit/129/code/build$ cat ~/breakit/batch7
+-K secret -T 1 -A -E John log231i
+-K secreta -T 2 -A -R 0 -E John log231i

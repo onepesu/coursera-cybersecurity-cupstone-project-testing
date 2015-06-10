@@ -1,0 +1,2 @@
+Program stops with a stack trace instead of printing "invalid" for the invalid batchlines.
+Also returns code 1 instead of 0.

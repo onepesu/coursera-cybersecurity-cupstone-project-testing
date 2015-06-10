@@ -1,0 +1,4 @@
+This submission doesn't allow me to place the logfile in other directories.
+The specification for both logread and logappend (https://www.builditbreakit.org/static/doc/spring2015/spec/LOGREAD.html option 'log') indicates that this should be possible.
+
+The test case uses the local dir "./" to ensure that the desired folder is available. The behaviour is the same for other directories in the file system.

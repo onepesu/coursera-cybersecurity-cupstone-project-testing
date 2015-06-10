@@ -1,0 +1,1 @@
+logread call with an employee name existing as a guest causes crash

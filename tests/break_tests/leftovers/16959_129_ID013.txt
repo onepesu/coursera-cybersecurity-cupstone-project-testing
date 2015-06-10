@@ -1,0 +1,1 @@
+Spec says invalid should be printed for invalid batch lines and names should consist of letters in the range [A-Za-z] only.

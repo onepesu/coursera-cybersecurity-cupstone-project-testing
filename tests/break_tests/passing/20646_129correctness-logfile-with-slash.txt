@@ -1,0 +1,1 @@
+Logappend prints invalid when the filename contains the characters '/', even though the path is valid.

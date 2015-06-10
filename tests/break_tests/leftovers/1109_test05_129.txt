@@ -1,0 +1,1 @@
+[5/12/15 6:00PM EST] Log file names can include periods. Slashes may be used to reference log files in other directories.

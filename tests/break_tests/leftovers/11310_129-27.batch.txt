@@ -1,0 +1,3 @@
+-T 1 -A -E GIGGIO -K secret TESTLOG4
+-T 1 -K secret -E GIGGIO -A ../TESTLOG1
+-T 2 -K secret -G PLUTO -A -A -A -A -A TESTLOG2

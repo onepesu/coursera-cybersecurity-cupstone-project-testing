@@ -1,0 +1,2 @@
+-T 1 -K secret -E GIGGIO -A ../TESTLOG1
+-T 2 -K secret -G PLUTO -A ../TESTLOG1

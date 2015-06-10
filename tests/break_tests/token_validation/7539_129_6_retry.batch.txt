@@ -1,0 +1,3 @@
+-T 2 -K secret -G GEORGE -A thelog
+-T 3 -K secret -G GEORGE -A -R 1 thelog
+-T 4 -K wrong -G goo -A thelog

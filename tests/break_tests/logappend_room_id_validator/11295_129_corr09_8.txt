@@ -1,0 +1,1 @@
+No employee can leave a room they did not enter. logappend spec, -L parameter.

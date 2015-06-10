@@ -1,0 +1,26 @@
+{
+  "tests": [
+    {
+      "input": "logappend -T 1 -K sec -A -G Sam personkindquery.log"
+    },
+    {
+      "input": "logread -K sec -R -G Sam personkindquery.log"
+    },
+    {
+      "input": "logappend -T 2 -K sec -A -R 9 -G Sam personkindquery.log"
+    },
+    {
+      "input": "logappend -T 3 -K sec -L -R 9 -G Sam personkindquery.log"
+    },
+    {
+      "input": "logappend -T 4 -K sec -L -G Sam personkindquery.log"
+    },
+    {
+      "input": "logread -K sec -R -E Sam personkindquery.log"
+    },
+    {
+      "input": "logread -K sec -R -G Sam personkindquery.log",
+      "output": "9"
+    }
+  ]
+}

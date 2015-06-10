@@ -1,0 +1,3 @@
+-K secret -T 1 -A -E Name batch_different_keys
+-K notsecret -T 2 -A -E aName batch_different_keys
+-K secret -T 6 -A -G bName batch_different_keys

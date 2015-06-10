@@ -1,0 +1,1 @@
+LOGFILE and ./LOGFILE refere to the same file

@@ -1,0 +1,2 @@
+Logappend refuses the valid filename ./log. This filename is
+accepted by both spec ('including / and .') and oracle.

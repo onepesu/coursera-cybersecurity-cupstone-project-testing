@@ -1,0 +1,1 @@
+Bug: The logname is 'batch' which, since this is given in a batch, should point to an existing file that is not-empty AND also not a log file.

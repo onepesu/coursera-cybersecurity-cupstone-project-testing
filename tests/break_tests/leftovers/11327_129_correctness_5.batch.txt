@@ -1,0 +1,3 @@
+-K key -T 1 -E ana -A log
+-K wrongkey -T 2 -E ricky -A log
+-K key -T 3 -G joe -A log

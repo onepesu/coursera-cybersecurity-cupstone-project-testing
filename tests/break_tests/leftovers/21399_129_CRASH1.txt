@@ -1,0 +1,1 @@
+This test case demonstrates that program crashes when it is invoked with a batch command that targets a destination log file named "batch" (same as source batch file name) or "logappend" (same as executable file name). The program exits unexpectedly and dumps the memory addresses of the variables that hold the referenced files.

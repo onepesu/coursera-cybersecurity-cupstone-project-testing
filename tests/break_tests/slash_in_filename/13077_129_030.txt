@@ -1,0 +1,1 @@
+Arguments bug: Logs are allowed slashes to point to a directory (see spec and oracle). Current directory is specified to ensure it exists.  Expected output is 'Lou'

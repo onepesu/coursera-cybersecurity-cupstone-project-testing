@@ -1,0 +1,3 @@
+-K secret -T 2 -E Joey -A logBinB
+-B otherBatch
+-K secret -T 3 -E NotJoey -A logBinB
