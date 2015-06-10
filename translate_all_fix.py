@@ -2,8 +2,9 @@ import os
 import settings
 from translate_break_submission import translate
 
-for report_name in os.listdir(settings.BREAKS):
-    if report_name[-3:] == 'txt':
+for report_name in os.listdir(settings.READ_TESTS):
+    if report_name[-5:] != '.json':
         continue
     else:
-        translate(report_name)
+        base_name = report_name[:-5]
+        translate(base_name)

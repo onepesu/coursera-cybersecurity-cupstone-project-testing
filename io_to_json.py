@@ -7,7 +7,11 @@ import settings
 
 def _translate(input_, output, batch, open_file):
     def put(string, indentation=0, end='\n'):
-        print('  '*indentation + string, end=end, file=open_file)
+        try:
+            print('  '*indentation + string, end=end, file=open_file)
+        except UnicodeEncodeError:
+            not_encoded = u'  '*indentation + string
+            print(not_encoded.encode('utf-8'), end=end, file=open_file)
 
     put('{')
     put('"tests": [', 1, '')
@@ -44,5 +48,5 @@ def translate(input_, output, batch=None, filename=sys.stdout):
     if isinstance(filename, file):
         _translate(input_, output, batch, filename)
     else:
-        with open(os.path.join(settings.TEST_FOLDER, filename), 'w') as open_file:
+        with open(os.path.join(settings.WRITE_TESTS, filename), 'w') as open_file:
             _translate(input_, output, batch, open_file)
