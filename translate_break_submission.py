@@ -32,7 +32,7 @@ def _translate(submission, break_file_name):
 def translate(break_file_name):
     with open(os.path.join(settings.READ_TESTS, break_file_name + '.json'), 'r') as break_file:
         submission = json.load(break_file)
-        batch = _translate(submission, break_file_name)
+        batch = _translate(submission, break_file_name + '.json')
     with open(os.path.join(settings.READ_TESTS, break_file_name + '.txt'), 'r') as in_txt:
         with open(os.path.join(settings.WRITE_TESTS, break_file_name + '.txt'), 'w') as out_txt:
             out_txt.write(in_txt.read())
