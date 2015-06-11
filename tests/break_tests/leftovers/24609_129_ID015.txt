@@ -1,1 +1,0 @@
-Spec says invalid should be printed for invalid batch lines and the timestamp in the second batch line is out of range.
