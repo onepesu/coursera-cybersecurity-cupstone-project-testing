@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "input": "logappend -B batch",
+      "output": "invalid\ninvalid\ninvalid\n",
+      "exit": 255
+    },
+    {
+      "input": "logread -K sec -S batch_invalid_timestamplog",
+      "output": "\n\n"
+    }
+  ],
+  "batch": "LVQgMSAgICAgICAgICAtSyBzZWMgLUUgSk9FIC1BIGJhdGNoX2ludmFsaWRfdGltZXN0YW1wLmxvZwotVCAyMTQ3NDgzNjQ3IC1LIHNlYyAtRSBKT0UgLUEgLVIgMSBiYXRjaF9pbnZhbGlkX3RpbWVzdGFtcC5sb2cK"
+}

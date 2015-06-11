@@ -1,0 +1,2 @@
+-T 1          -K sec -E JOE -A batch_invalid_timestamp.log
+-T 2147483647 -K sec -E JOE -A -R 1 batch_invalid_timestamp.log
