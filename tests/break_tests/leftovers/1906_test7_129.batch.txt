@@ -1,2 +1,0 @@
--T 1 -K secret -E John -A log1
--T 2 -K terces -E Jane -A log1
