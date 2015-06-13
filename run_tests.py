@@ -31,7 +31,7 @@ to_keep = (
     'spec', 'run_tests.py', 'io_to_json.py', 'create_integrity_report.py',
     '.git', 'tests', 'create_confidentiality_report.py',
     'create_correctness_or_crash_report.py', 'translate_break_submission.py',
-    'translate_all_fix.py'
+    'translate_all_fix.py', 'fix_submission_files.py'
 )
 
 
