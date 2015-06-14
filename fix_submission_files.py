@@ -44,8 +44,9 @@ def make_files_from_folder(folder_name, commit_hash, justification):
             continue
         else:
             submission_id_list.append(bug_report.split('_')[0])
+    submission_id_list.sort(key=lambda x: int(x))
     if submission_id_list:
-        justification = justification[1:-1]
+        justification = justification[1:]
         make_files(folder_name, commit_hash, submission_id_list, justification)
         print(len(submission_id_list))
     else:
